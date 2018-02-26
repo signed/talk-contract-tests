@@ -1,6 +1,11 @@
 == Pact: Concepts
 
-== Pact: Example
+=== Pact: Example
 
-== https://github.com/pact-foundation/pact_broker[Pact Broker]
+=== https://github.com/pact-foundation/pact_broker[Pact Broker]
 - What is it
+
+[NOTE.speaker]
+--
+pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issuecomment-367525621[Source]
+--
