@@ -31,8 +31,9 @@ const TransitionSpeed = Object.freeze({
 const asciidoctor_reveal_js = {
     'revealjsdir': base_dir + '/node_modules/reveal.js@',
     'revealjs_history': true,
-    'revealjs_transition': Transition.CONCAVE,
-    'revealjs_transitionSpeed': TransitionSpeed.DEFAULT
+    'revealjs_transition': Transition.SLIDE,
+    'revealjs_transitionSpeed': TransitionSpeed.DEFAULT,
+    'source-highlighter': 'highlightjs'
 };
 
 // These are the same as for the ruby version

@@ -1,5 +1,13 @@
 = Contract Tests in pact
 
+[source,javascript]
+----
+const Enum = Object.freeze({
+  ONE: 'one',
+  TWO: 'two'
+});
+----
+
 include::{slides}/motivation.adoc[]
 
 == How do we do it today?
