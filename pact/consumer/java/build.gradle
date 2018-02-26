@@ -1,0 +1,11 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.13'
+}
