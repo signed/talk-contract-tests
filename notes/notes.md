@@ -4,6 +4,7 @@
 
 ## Javascript
 ## Java
+The documentation for pact-jvm seems to be in the projects [github wiki](https://github.com/DiUS/pact-jvm/wiki)
 ### Examples
 Pact-jvm with spring boot, have a look at
 https://github.com/Mikuu/Pact-JVM-Example good documented and up to date
