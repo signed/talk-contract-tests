@@ -1,0 +1,6 @@
+
+== What's the problem?
+
+* Slow Integration tests
+* Will this change break our clients? Lets do a v2/
+* Feedback

@@ -1,0 +1,18 @@
+= Contract Tests in pact
+
+include::{slides}/motivation.adoc[]
+
+== How do we do it today?
+* Hand written Test Doubles with hand written tests
+* not at all
+* Integration environments
+* Manual research into client code
+
+include::{slides}/expectations.adoc[]
+
+
+include::{slides}/pact.adoc[]
+
+
+== Beyond Consumer Driven Contracts
+ Session offer von Nicole im April

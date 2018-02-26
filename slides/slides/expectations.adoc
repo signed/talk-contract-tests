@@ -1,0 +1,8 @@
+
+== Expectations
+
+* Generated Test Doubles
+* Works across languages
+* Can be checked in a CI environment
+* Good error messages
+* Good tooling
