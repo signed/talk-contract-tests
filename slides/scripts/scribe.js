@@ -12,10 +12,27 @@ const own = {
     'slides': 'slides'
 };
 
+const Transition = Object.freeze({
+    NONE: 'none',
+    FADE: 'fade',
+    SLIDE: 'slide',
+    CONVEX: 'convex',
+    CONCAVE: 'concave',
+    ZOOM: 'zoom'
+});
+
+const TransitionSpeed = Object.freeze({
+    SLOW: 'slow',
+    DEFAULT: 'default',
+    FAST: 'fast'
+});
+
 // https://asciidoctor.org/docs/asciidoctor-revealjs/#reveal-js-options
 const asciidoctor_reveal_js = {
     'revealjsdir': base_dir + '/node_modules/reveal.js@',
-    'revealjs_history': true
+    'revealjs_history': true,
+    'revealjs_transition': Transition.CONCAVE,
+    'revealjs_transitionSpeed': TransitionSpeed.DEFAULT
 };
 
 // These are the same as for the ruby version
