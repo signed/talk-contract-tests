@@ -7,6 +7,10 @@ repositories {
 }
 
 dependencies {
+    compile 'ch.qos.logback:logback-classic:1.2.3'
+    compile 'com.squareup.okhttp3:okhttp:3.10.0'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
     testCompile 'junit:junit:4.12'
+    testCompile 'org.assertj:assertj-core:3.9.0'
     testCompile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.13'
 }
