@@ -16,5 +16,7 @@ https://github.com/mstine/microservices-pact has not been updated since 2016
 ### Integration
 #### Java
 There is [pact-jvm-consumer-java8](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-java8) that provides a DSL to write consumer pacts.
+
+- I do not like that I have to set the output directory for pact files via system property
 #### Gradle
 [pact-jvm-provider-gradle](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle)
