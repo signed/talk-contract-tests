@@ -2,6 +2,12 @@
 
 === Pact: Example
 
+
+=== Pact: Provider Side Changes break Client
+
+* forget IgnoreUnknowns on Java DTO and add additional fields on the Provider.
+
+
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 - What is it
 
