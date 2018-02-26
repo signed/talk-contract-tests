@@ -12,8 +12,10 @@ const own = {
     'slides': 'slides'
 };
 
+// https://asciidoctor.org/docs/asciidoctor-revealjs/#reveal-js-options
 const asciidoctor_reveal_js = {
-    'revealjsdir': base_dir + '/node_modules/reveal.js@'
+    'revealjsdir': base_dir + '/node_modules/reveal.js@',
+    'revealjs_history': true
 };
 
 // These are the same as for the ruby version
