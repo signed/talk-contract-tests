@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/signed/talk-contract-tests.git"
+  },
   "scripts": {
     "present": "npm run scribe && open out/presentation.html",
     "scribe": "node scripts/scribe.js"
