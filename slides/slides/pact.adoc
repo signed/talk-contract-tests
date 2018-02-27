@@ -2,6 +2,7 @@
 
 === Pact: Example
 
+=== Pact: Provider State
 
 === Pact: Provider Side Changes break Client
 

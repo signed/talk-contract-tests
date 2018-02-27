@@ -15,8 +15,13 @@ https://github.com/mstine/microservices-pact has not been updated since 2016
 
 ### Integration
 #### Java
+[Introduction workshop](https://github.com/DiUS/pact-workshop-jvm) into pact jvm.
 There is [pact-jvm-consumer-java8](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-java8) that provides a DSL to write consumer pacts.
 
 - I do not like that I have to set the output directory for pact files via system property
+- The pact-jvm project uses a mix of groovy, java, scala, kotlin code, bit daunting. Why is not clear to me.
+- Documentation on jvm specific details is cluttered and all over the repository. Outdated links and code samples as well. 
+- Why do I need the dsl to define json?
+
 #### Gradle
 [pact-jvm-provider-gradle](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle)
