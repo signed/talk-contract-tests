@@ -9,6 +9,7 @@ import au.com.dius.pact.model.RequestResponsePact;
 import io.pactfoundation.consumer.dsl.LambdaDsl;
 import org.junit.Test;
 
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -21,9 +22,9 @@ public class CalculatorClientPact {
 
 	@Test
 	public void testWithPactDSLJsonBody() {
-		System.getProperties().setProperty("pact.rootDir", "build/generated/pacts");
+		System.getProperties().setProperty("pact.rootDir", "../../pacts");
 		Map<String, String> headers = new HashMap<>();
-		headers.put("Content-Type", "application/json;charset=UTF-8");
+		headers.put("Content-Type", "application/json;charset=utf-8");
 
 		DslPart requestBody = LambdaDsl.newJsonBody((o) -> {
 			o.array("summands", (s) -> {
@@ -38,7 +39,7 @@ public class CalculatorClientPact {
 		RequestResponsePact pact = ConsumerPactBuilder
 				.consumer("SumService")
 				.hasPactWith("CalculatorService")
-				.given("")
+				//.given("")
 				.uponReceiving("sum two numbers")
 				.path("/operations/sum")
 				.body(requestBody)

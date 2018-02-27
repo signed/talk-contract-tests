@@ -14,7 +14,7 @@ import java.util.List;
 class SumClient {
 
 	private static final MediaType JSON
-			= MediaType.parse("application/json; charset=UTF-8");
+			= MediaType.parse("application/json;charset=UTF-8");
 
 	private static class Addition {
 		public List<Number> summands;
