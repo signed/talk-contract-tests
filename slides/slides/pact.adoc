@@ -19,6 +19,8 @@ https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
 === Pact: Findings
 
 Matchers: 85 vs. 85.0
+Consumer passing arguments for state changes works only on pact-jvm?
+
 
 [NOTE.speaker]
 --
@@ -28,8 +30,16 @@ maybe lack of knowledge/experience with the tool?
 Limitation of the jvm implementation?
 --
 
+=== Pact: Contact
+https://gitter.im/realestate-com-au/pact[Gitter]
+
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
+
+verification results are published back to the broker
 - What is it
+- https://github.com/pact-foundation/pact_broker/wiki/Overview
+- https://github.com/pact-foundation/pact_broker/wiki/Using-tags
+- https://github.com/pact-foundation/pact_broker/wiki/How-to-ensure-backwards-compatibility-by-tagging-pacts
 
 [NOTE.speaker]
 --
