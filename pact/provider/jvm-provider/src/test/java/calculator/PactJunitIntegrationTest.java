@@ -32,12 +32,11 @@ public class PactJunitIntegrationTest {
 		}
 	}
 
-	@Before //Method will be run before each test of interaction
+	@Before
 	public void before() {
 		// Rest data
 		// Mock dependent service responses
 		// ...
-		//System.setProperty("pact.provider.version", "0.0.1");
 		calculator.start();
 	}
 
@@ -47,19 +46,18 @@ public class PactJunitIntegrationTest {
 	}
 
 	@State(value = {"default", "no-data"})
-	// Method will be run before testing interactions that require "default" or "no-data" state
 	public void toDefaultState() {
 		System.out.println("Now service in default state");
 	}
 
-	@State("with-data") // Method will be run before testing interactions that require "with-data" state
+	@State("with-data")
 	public void toStateWithData(Map<String, Object> data) {
 		// Prepare service before interaction that require "with-data" state. The provider state data will be passed
-		// in the data parameter
+		// in the data parameter; This seems to be a pact-jvm only feature
 		// ...
 		System.out.println("Now service in state using data " + data);
 	}
 
-	@TestTarget // Annotation denotes Target that will be used for tests
+	@TestTarget
 	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculator::port);
 }
