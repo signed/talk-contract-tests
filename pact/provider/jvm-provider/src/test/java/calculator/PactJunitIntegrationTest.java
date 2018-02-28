@@ -3,6 +3,7 @@ package calculator;
 import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
+import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
 import au.com.dius.pact.provider.junit.target.TestTarget;
 import org.junit.After;
@@ -14,7 +15,8 @@ import java.util.Map;
 
 @RunWith(PactRunner.class)
 @Provider("CalculatorService")
-@PactFolder("../../pacts")
+//@PactFolder("../../pacts")
+@PactBroker(host = "pactbroker", port = "80")
 public class PactJunitIntegrationTest {
 
 	private final Calculator calculator = new Calculator();
@@ -24,6 +26,10 @@ public class PactJunitIntegrationTest {
 		//Run DB, create schema
 		//Run service
 		//...
+		String providerVersionPropertyName = "pact.provider.version";
+		if(!System.getProperties().stringPropertyNames().contains(providerVersionPropertyName)){
+			System.getProperties().setProperty(providerVersionPropertyName, "0.0.2");
+		}
 	}
 
 	@Before //Method will be run before each test of interaction
@@ -31,6 +37,7 @@ public class PactJunitIntegrationTest {
 		// Rest data
 		// Mock dependent service responses
 		// ...
+		//System.setProperty("pact.provider.version", "0.0.1");
 		calculator.start();
 	}
 

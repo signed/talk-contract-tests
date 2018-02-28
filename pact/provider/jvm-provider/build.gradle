@@ -2,6 +2,8 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+version='0.0.1'
+
 repositories {
     mavenCentral()
 }
@@ -14,4 +16,8 @@ dependencies {
     testCompile 'org.assertj:assertj-core:3.9.0'
     testCompile 'au.com.dius:pact-jvm-provider_2.12:3.5.13'
     testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.13'
+}
+
+test{
+    systemProperties['pact.provider.version'] = version
 }
