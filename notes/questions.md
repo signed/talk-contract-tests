@@ -7,4 +7,7 @@ How valuable are those tests, if they are only run against parts of the service?
 
 Are client-libraries solving the same problem?
 
+Failed verification results are not uploaded. Is this correct?
+If provider validation fails the pact broker switches to red with 405 Method not allowed message? What does this mean?
+
 How to switch out the code highlighter theme
