@@ -10,6 +10,8 @@
 
 === Pact: Matchers
 
+What elements can be matched
+
 https://docs.pact.io/documentation/matching.html
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
 https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
@@ -20,6 +22,8 @@ Matchers: 85 vs. 85.0
 
 [NOTE.speaker]
 --
+equals is used to compare numbers
+matching more complex string cases seem to be fiddly.
 maybe lack of knowledge/experience with the tool?
 Limitation of the jvm implementation?
 --
