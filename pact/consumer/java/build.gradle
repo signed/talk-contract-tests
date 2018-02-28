@@ -6,6 +6,10 @@ repositories {
     mavenCentral()
 }
 
+test {
+    systemProperties['pact.rootDir'] = "../../pacts"
+}
+
 dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
