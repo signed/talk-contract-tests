@@ -12,6 +12,7 @@
 
 https://docs.pact.io/documentation/matching.html
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
+https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
 
 === Pact: Findings
 
