@@ -8,6 +8,10 @@
 
 * forget IgnoreUnknowns on Java DTO and add additional fields on the Provider.
 
+=== Pact: Matchers
+
+https://docs.pact.io/documentation/matching.html
+https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
 
 === Pact: Findings
 
