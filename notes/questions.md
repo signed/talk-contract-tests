@@ -10,4 +10,7 @@ Are client-libraries solving the same problem?
 Failed verification results are not uploaded. Is this correct?
 If provider validation fails the pact broker switches to red with 405 Method not allowed message? What does this mean?
 
+I added a new property on the provider side that breaks the consumer. How is the consumer informed about this? Right now everything looks peachy in pact broker
+There seems to be a bug in the pact broker where I'm not allowed to access the verification results
+
 How to switch out the code highlighter theme
