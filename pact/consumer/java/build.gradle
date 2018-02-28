@@ -1,4 +1,10 @@
+plugins {
+    id "au.com.dius.pact" version "3.5.13"
+}
+
 apply plugin: 'java'
+
+version='0.2.4'
 
 sourceCompatibility = 1.8
 
@@ -6,8 +12,17 @@ repositories {
     mavenCentral()
 }
 
+ext.pactRootDir = '../../pacts'
+
 test {
-    systemProperties['pact.rootDir'] = "../../pacts"
+    systemProperties['pact.rootDir'] = pactRootDir
+}
+
+pact {
+    publish {
+        pactDirectory = pactRootDir
+        pactBrokerUrl = 'http://192.168.99.100'
+    }
 }
 
 dependencies {
