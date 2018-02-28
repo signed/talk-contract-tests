@@ -9,6 +9,16 @@
 * forget IgnoreUnknowns on Java DTO and add additional fields on the Provider.
 
 
+=== Pact: Findings
+
+Matchers: 85 vs. 85.0
+
+[NOTE.speaker]
+--
+maybe lack of knowledge/experience with the tool?
+Limitation of the jvm implementation?
+--
+
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 - What is it
 
