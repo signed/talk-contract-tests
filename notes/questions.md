@@ -15,4 +15,6 @@ There seems to be a bug in the pact broker where I'm not allowed to access the v
 
 can I upload pacts from within pact-jvm-consumer-junit without using pact gradle plugin.?
 
+Battery example to showcase provider states
+
 How to switch out the code highlighter theme
