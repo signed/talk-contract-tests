@@ -1,19 +1,25 @@
 package calculator;
 
 import com.google.gson.Gson;
-import com.google.gson.TypeAdapter;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import spark.Spark;
 
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.function.BinaryOperator;
 
 public class Calculator {
 
 	public static void main(String[] args) {
-		new Calculator().start();
+		new Calculator(9090).start();
+	}
+
+	public static Calculator onRandomPort() {
+		return new Calculator(0);
+	}
+
+	private final int port;
+
+	private Calculator(int port) {
+		this.port = port;
 	}
 
 	/**
@@ -21,7 +27,7 @@ public class Calculator {
 	 */
 	public void start() {
 		Gson gson = new Gson();
-		Spark.port(0);
+		Spark.port(port);
 		Spark.post("/operations/sum", "application/json", (req, res) -> {
 			AdditionInput additionInput = gson.fromJson(req.body(), AdditionInput.class);
 			BigDecimal sum = sumFor(additionInput);

@@ -4,7 +4,6 @@ import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.loader.PactBroker;
-import au.com.dius.pact.provider.junit.loader.PactFolder;
 import au.com.dius.pact.provider.junit.target.TestTarget;
 import org.junit.After;
 import org.junit.Before;
@@ -17,9 +16,9 @@ import java.util.Map;
 @Provider("CalculatorService")
 //@PactFolder("../../pacts")
 @PactBroker(host = "pactbroker", port = "80")
-public class PactJunitIntegrationTest {
+public class PactCalculatorProviderTest {
 
-	private final Calculator calculator = new Calculator();
+	private final Calculator calculator = Calculator.onRandomPort();
 
 	@BeforeClass
 	public static void setUpService() {
