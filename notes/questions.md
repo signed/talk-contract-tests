@@ -20,3 +20,9 @@ Battery example to showcase provider states
 https://en.wikipedia.org/wiki/Robustness_principle
 
 How to switch out the code highlighter theme
+
+To read:
+
+http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
+https://dius.com.au/resources/contract-testing/
+https://dius.com.au/2018/01/21/closing-the-loop-with-pact-verifications/
