@@ -1,16 +1,20 @@
 package sum;
 
 import au.com.dius.pact.consumer.ConsumerPactBuilder;
+import au.com.dius.pact.consumer.PactTestRun;
 import au.com.dius.pact.consumer.PactVerificationResult;
 import au.com.dius.pact.consumer.dsl.DslPart;
 import au.com.dius.pact.model.MockProviderConfig;
 import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import io.pactfoundation.consumer.dsl.LambdaDsl;
+import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static au.com.dius.pact.consumer.ConsumerPactRunnerKt.runConsumerTest;
@@ -25,8 +29,29 @@ class PactSumConsumerTest {
 		System.getProperties().setProperty("pact.rootDir", "../../pacts");
 	}
 
+	public static class ConsumerPactArguments {
+
+		final RequestResponsePact pact;
+		final PactTestRun pactTestRun;
+
+		ConsumerPactArguments(RequestResponsePact pact, PactTestRun pactTestRun) {
+			this.pact = pact;
+			this.pactTestRun = pactTestRun;
+		}
+	}
+
 	@Test
 	void validateAndWritePacts() {
+		List<ConsumerPactArguments> fragments = Arrays.asList(sumDuringNormalOperations());
+		fragments.forEach( arguments -> {
+			MockProviderConfig config = createDefault(PactSpecVersion.V3);
+			PactVerificationResult result = runConsumerTest(arguments.pact, config, arguments.pactTestRun);
+			checkResult(result);
+		});
+	}
+
+	@NotNull
+	private ConsumerPactArguments sumDuringNormalOperations() {
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=utf-8");
 
@@ -54,13 +79,11 @@ class PactSumConsumerTest {
 				.body(responseBody)
 				.toPact();
 
-		MockProviderConfig config = createDefault(PactSpecVersion.V3);
-		PactVerificationResult result = runConsumerTest(pact, config, mockServer -> {
+		return new ConsumerPactArguments(pact, mockServer -> {
 			SumClient providerHandler = new SumClient(mockServer.getUrl());
 			Number sum = providerHandler.sum(43, 42);
 			assertThat(sum).isEqualTo(85);
 		});
-		checkResult(result);
 	}
 
 	private void checkResult(PactVerificationResult result) {
