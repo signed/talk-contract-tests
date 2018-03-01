@@ -1,4 +1,6 @@
 == Pact: Where does it come from
+
+https://github.com/pact-foundation[pact-foundation-github]
 the ideas from consumer driven contracts
 break up your integration tests into unit tests
 
@@ -44,6 +46,7 @@ https://gitter.im/realestate-com-au/pact[Gitter]
 
 verification results are published back to the broker
 - What is it
+- https://github.com/pact-foundation/pact_broker[pact-broker on github]
 - https://github.com/pact-foundation/pact_broker/wiki/Overview
 - https://github.com/pact-foundation/pact_broker/wiki/Using-tags
 - https://github.com/pact-foundation/pact_broker/wiki/How-to-ensure-backwards-compatibility-by-tagging-pacts
