@@ -29,7 +29,12 @@
                 "body": {
                     "result": 85
                 }
-            }
+            },
+            "providerStates": [
+                {
+                    "name": "calculator online"
+                }
+            ]
         }
     ],
     "metadata": {

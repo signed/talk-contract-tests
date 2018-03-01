@@ -50,7 +50,6 @@ class PactSumConsumerTest {
 		});
 	}
 
-	@NotNull
 	private ConsumerPactArguments sumDuringNormalOperations() {
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=utf-8");
@@ -68,7 +67,7 @@ class PactSumConsumerTest {
 		RequestResponsePact pact = ConsumerPactBuilder
 				.consumer("SumService")
 				.hasPactWith("CalculatorService")
-				//.given("")
+				.given("calculator online")
 				.uponReceiving("sum two numbers")
 				.path("/operations/sum")
 				.body(requestBody)
