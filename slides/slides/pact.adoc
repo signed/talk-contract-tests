@@ -1,4 +1,9 @@
+== Pact: Where does it come from
+the ideas from consumer driven contracts
+break up your integration tests into unit tests
+
 == Pact: Concepts
+
 
 === Pact: Example
 
@@ -35,6 +40,8 @@ https://gitter.im/realestate-com-au/pact[Gitter]
 
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 
+- https://pact.dius.com.au/[free hosted pact brokers]
+
 verification results are published back to the broker
 - What is it
 - https://github.com/pact-foundation/pact_broker/wiki/Overview
@@ -45,3 +52,8 @@ verification results are published back to the broker
 --
 pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issuecomment-367525621[Source]
 --
+
+
+=== Pact: Where to use it
+- If you control code for the consumer and the provider
+- public apis are not suited, better of with Swagger documentation
