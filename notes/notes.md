@@ -22,6 +22,7 @@ There is [pact-jvm-consumer-java8](https://github.com/DiUS/pact-jvm/tree/master/
 - The pact-jvm project uses a mix of groovy, java, scala, kotlin code, bit daunting. Why is not clear to me.
 - Documentation on jvm specific details is cluttered and all over the repository. Outdated links and code samples as well. 
 - Why do I need the dsl to define json?
+- Pact files seem to be merge when being written to a file with what is already there.
 
 #### Gradle
 [pact-jvm-provider-gradle](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-gradle)
