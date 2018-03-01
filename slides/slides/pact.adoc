@@ -60,3 +60,6 @@ pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issue
 === Pact: Where to use it
 - If you control code for the consumer and the provider
 - public apis are not suited, better of with Swagger documentation
+
+=== Pact: What can not be ensured with this approach
+- Firewall rules and network connectivity
