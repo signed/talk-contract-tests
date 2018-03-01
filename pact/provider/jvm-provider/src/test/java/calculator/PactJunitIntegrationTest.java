@@ -28,7 +28,7 @@ public class PactJunitIntegrationTest {
 		//...
 		String providerVersionPropertyName = "pact.provider.version";
 		if(!System.getProperties().stringPropertyNames().contains(providerVersionPropertyName)){
-			System.getProperties().setProperty(providerVersionPropertyName, "0.0.2");
+			System.getProperties().setProperty(providerVersionPropertyName, "0.0.1");
 		}
 	}
 

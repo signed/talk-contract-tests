@@ -7,6 +7,7 @@ import au.com.dius.pact.model.MockProviderConfig;
 import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import io.pactfoundation.consumer.dsl.LambdaDsl;
+import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
@@ -18,11 +19,15 @@ import static au.com.dius.pact.model.MockProviderConfig.createDefault;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-public class CalculatorClientPactTest {
+public class PactCalculatorClientTest {
+
+	@Before
+	public void setLocationWhereToPutTheGeneratedPactFile() {
+		System.getProperties().setProperty("pact.rootDir", "../../pacts");
+	}
 
 	@Test
 	public void testWithPactDSLJsonBody() {
-		System.getProperties().setProperty("pact.rootDir", "../../pacts");
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=utf-8");
 
