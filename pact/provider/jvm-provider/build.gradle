@@ -12,12 +12,17 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.sparkjava:spark-core:2.7.1'
     compile 'com.google.code.gson:gson:2.8.2'
-    testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.9.0'
-    testCompile 'au.com.dius:pact-jvm-provider_2.12:3.5.13'
     testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.13'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.0'
 }
 
 test{
     systemProperties['pact.provider.version'] = version
+
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter', 'junit-vintage'
+    }
 }
