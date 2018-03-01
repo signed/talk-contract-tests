@@ -8,8 +8,11 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 /**
- * Do not write this yourself use <a href="https://github.com/google/guava/tree/master/guava-testlib">guava-testlib</a>.
+ * Do not write collections tests yourself use <a href="https://github.com/google/guava/tree/master/guava-testlib">guava-testlib</a>.
  * <a href="https://blog.codefx.org/techniques/testing/test-collection-implementations-with-guava/">Codefx</a> has a blog post on how to use this.
+ *
+ * I think that <a href="https://github.com/Claudenw/junit-contracts">junit-contracts</a> does interface based contracts testing,
+ * never used it myself
  */
 class ListContractTest {
 
