@@ -18,7 +18,8 @@ import java.util.Map;
 @PactBroker(host = "pactbroker", port = "80")
 public class PactCalculatorProviderTest {
 
-	private final Calculator calculator = Calculator.onRandomPort();
+	private final OnlineStatusFake onlineStatus = new OnlineStatusFake();
+	private final Calculator calculator = Calculator.onRandomPort(onlineStatus);
 
 	@BeforeClass
 	public static void setUpService() {
@@ -26,7 +27,7 @@ public class PactCalculatorProviderTest {
 		//Run service
 		//...
 		String providerVersionPropertyName = "pact.provider.version";
-		if(!System.getProperties().stringPropertyNames().contains(providerVersionPropertyName)){
+		if (!System.getProperties().stringPropertyNames().contains(providerVersionPropertyName)) {
 			System.getProperties().setProperty(providerVersionPropertyName, "0.0.1");
 		}
 	}
@@ -48,6 +49,7 @@ public class PactCalculatorProviderTest {
 	@State(value = {"calculator online"})
 	public void toDefaultState() {
 		System.out.println("calculator online");
+		onlineStatus.online();
 	}
 
 	@State("with-data")
@@ -60,4 +62,21 @@ public class PactCalculatorProviderTest {
 
 	@TestTarget
 	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculator::port);
+
+	private static class OnlineStatusFake implements OnlineStatus {
+		private boolean online = true;
+
+		public void offline() {
+			online = false;
+		}
+
+		public void online() {
+			online = true;
+		}
+
+		@Override
+		public boolean isOnline() {
+			return online;
+		}
+	}
 }

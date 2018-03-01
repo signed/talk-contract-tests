@@ -9,17 +9,19 @@ import java.util.function.BinaryOperator;
 public class Calculator {
 
 	public static void main(String[] args) {
-		new Calculator(9090).start();
+		new Calculator(9090, new AlwaysOnline()).start();
 	}
 
-	public static Calculator onRandomPort() {
-		return new Calculator(0);
+	public static Calculator onRandomPort(OnlineStatus onlineStatus) {
+		return new Calculator(0, onlineStatus);
 	}
 
 	private final int port;
+	private final OnlineStatus onlineStatus;
 
-	private Calculator(int port) {
+	private Calculator(int port, OnlineStatus onlineStatus) {
 		this.port = port;
+		this.onlineStatus = onlineStatus;
 	}
 
 	/**
@@ -56,5 +58,12 @@ public class Calculator {
 	public void shutdown() {
 		Spark.stop();
 
+	}
+
+	private static class AlwaysOnline implements OnlineStatus {
+		@Override
+		public boolean isOnline() {
+			return true;
+		}
 	}
 }
