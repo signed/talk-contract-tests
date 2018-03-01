@@ -17,4 +17,6 @@ can I upload pacts from within pact-jvm-consumer-junit without using pact gradle
 
 Battery example to showcase provider states
 
+https://en.wikipedia.org/wiki/Robustness_principle
+
 How to switch out the code highlighter theme
