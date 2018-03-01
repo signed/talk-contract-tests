@@ -26,7 +26,7 @@ class PactSumConsumerTest {
 	}
 
 	@Test
-	void testWithPactDSLJsonBody() {
+	void validateAndWritePacts() {
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=utf-8");
 
