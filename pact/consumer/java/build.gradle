@@ -4,7 +4,7 @@ plugins {
 
 apply plugin: 'java'
 
-version='0.0.1'
+version = '0.0.1'
 
 sourceCompatibility = 1.8
 
@@ -18,6 +18,12 @@ test {
     systemProperties['pact.rootDir'] = pactRootDir
 }
 
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter', 'junit-vintage'
+    }
+}
+
 pact {
     publish {
         pactDirectory = pactRootDir
@@ -29,7 +35,9 @@ dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.4'
-    testCompile 'junit:junit:4.12'
     testCompile 'org.assertj:assertj-core:3.9.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.0'
     testCompile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.13'
 }

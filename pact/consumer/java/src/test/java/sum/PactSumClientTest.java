@@ -7,10 +7,9 @@ import au.com.dius.pact.model.MockProviderConfig;
 import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import io.pactfoundation.consumer.dsl.LambdaDsl;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,15 +18,15 @@ import static au.com.dius.pact.model.MockProviderConfig.createDefault;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-public class PactSumClientTest {
+class PactSumClientTest {
 
-	@Before
-	public void setLocationWhereToPutTheGeneratedPactFile() {
+	@BeforeEach
+	void setLocationWhereToPutTheGeneratedPactFile() {
 		System.getProperties().setProperty("pact.rootDir", "../../pacts");
 	}
 
 	@Test
-	public void testWithPactDSLJsonBody() {
+	void testWithPactDSLJsonBody() {
 		Map<String, String> headers = new HashMap<>();
 		headers.put("Content-Type", "application/json;charset=utf-8");
 
@@ -61,7 +60,6 @@ public class PactSumClientTest {
 			Number sum = providerHandler.sum(43, 42);
 			assertThat(sum).isEqualTo(85);
 		});
-
 		checkResult(result);
 	}
 
