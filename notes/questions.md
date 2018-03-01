@@ -21,6 +21,10 @@ https://en.wikipedia.org/wiki/Robustness_principle
 
 How to switch out the code highlighter theme
 
+How to bring technical details from the provider into the consumer, like offline because of no battery.
+How does one get them to think about this? (talk to each other)
+
+
 To read:
 
 http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
