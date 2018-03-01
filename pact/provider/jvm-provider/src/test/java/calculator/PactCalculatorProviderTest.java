@@ -36,6 +36,7 @@ public class PactCalculatorProviderTest {
 		// Rest data
 		// Mock dependent service responses
 		// ...
+		System.out.println("before");
 		calculator.start();
 	}
 
@@ -44,9 +45,9 @@ public class PactCalculatorProviderTest {
 		calculator.shutdown();
 	}
 
-	@State(value = {"default", "no-data"})
+	@State(value = {"calculator online"})
 	public void toDefaultState() {
-		System.out.println("Now service in default state");
+		System.out.println("calculator online");
 	}
 
 	@State("with-data")
