@@ -11,6 +11,7 @@ public class AirLock {
                 betterHoldYourBreath();
             }
         }catch (RuntimeException ex){
+            System.out.println(ex.getMessage());
             betterHoldYourBreath();
         }
     }
