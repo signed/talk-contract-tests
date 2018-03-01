@@ -1,0 +1,20 @@
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+version = '0.0.1'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.0'
+    testCompile 'org.assertj:assertj-core:3.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.0'
+}
