@@ -19,7 +19,7 @@ import static au.com.dius.pact.model.MockProviderConfig.createDefault;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
-public class PactCalculatorClientTest {
+public class PactSumClientTest {
 
 	@Before
 	public void setLocationWhereToPutTheGeneratedPactFile() {
