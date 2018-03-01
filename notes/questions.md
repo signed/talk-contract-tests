@@ -13,4 +13,6 @@ If provider validation fails the pact broker switches to red with 405 Method not
 I added a new property on the provider side that breaks the consumer. How is the consumer informed about this? Right now everything looks peachy in pact broker
 There seems to be a bug in the pact broker where I'm not allowed to access the verification results
 
+can I upload pacts from within pact-jvm-consumer-junit without using pact gradle plugin.?
+
 How to switch out the code highlighter theme
