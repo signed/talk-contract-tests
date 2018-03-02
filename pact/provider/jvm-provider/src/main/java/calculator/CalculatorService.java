@@ -2,25 +2,23 @@ package calculator;
 
 import com.google.gson.Gson;
 import spark.Service;
-import spark.Spark;
 
-public class Calculator {
+public class CalculatorService {
 
 	public static void main(String[] args) {
-		new Calculator(9090, new AlwaysOnline()).start();
+		new CalculatorService(9090, new AlwaysOnline()).start();
 	}
 
-	public static Calculator onRandomPort(OnlineStatus onlineStatus) {
-		return new Calculator(0, onlineStatus);
+	public static CalculatorService onRandomPort(OnlineStatus onlineStatus) {
+		return new CalculatorService(0, onlineStatus);
 	}
-
 
 	private final int port;
 	private final OnlineStatus onlineStatus;
 	private final Gson gson = new Gson();
 	private Service http;
 
-	private Calculator(int port, OnlineStatus onlineStatus) {
+	private CalculatorService(int port, OnlineStatus onlineStatus) {
 		this.port = port;
 		this.onlineStatus = onlineStatus;
 	}

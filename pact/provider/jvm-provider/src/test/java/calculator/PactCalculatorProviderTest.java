@@ -19,7 +19,7 @@ import java.util.Map;
 public class PactCalculatorProviderTest {
 
 	private final OnlineStatusFake onlineStatus = new OnlineStatusFake();
-	private final Calculator calculator = Calculator.onRandomPort(onlineStatus);
+	private final CalculatorService calculatorService = CalculatorService.onRandomPort(onlineStatus);
 
 	@BeforeClass
 	public static void setUpService() {
@@ -38,12 +38,12 @@ public class PactCalculatorProviderTest {
 		// Mock dependent service responses
 		// ...
 		System.out.println("before");
-		calculator.start();
+		calculatorService.start();
 	}
 
 	@After
 	public void tearDown() {
-		calculator.shutdown();
+		calculatorService.shutdown();
 	}
 
 	@State(value = {"calculator online"})
@@ -67,7 +67,7 @@ public class PactCalculatorProviderTest {
 	}
 
 	@TestTarget
-	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculator::port);
+	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculatorService::port);
 
 	private static class OnlineStatusFake implements OnlineStatus {
 		private boolean online = true;
