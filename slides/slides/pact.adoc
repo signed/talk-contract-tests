@@ -66,4 +66,5 @@ pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issue
 
 === Pact: What benefits do you see?
 - You know your clients
+- You get people from the consumer talking to the producer people
 - Easier tracing which fields are use and by whom
