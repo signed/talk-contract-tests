@@ -1,10 +1,8 @@
 package calculator;
 
 import com.google.gson.Gson;
+import spark.Service;
 import spark.Spark;
-
-import java.math.BigDecimal;
-import java.util.function.BinaryOperator;
 
 public class Calculator {
 
@@ -16,8 +14,11 @@ public class Calculator {
 		return new Calculator(0, onlineStatus);
 	}
 
+
 	private final int port;
 	private final OnlineStatus onlineStatus;
+	private final Gson gson = new Gson();
+	private Service http;
 
 	private Calculator(int port, OnlineStatus onlineStatus) {
 		this.port = port;
@@ -28,41 +29,21 @@ public class Calculator {
 	 * http://sparkjava.com/documentation#getting-started
 	 */
 	public void start() {
-		Gson gson = new Gson();
-		Spark.port(port);
-		Spark.post("/operations/sum", "application/json", (req, res) -> {
-			if (onlineStatus.isOffline()) {
-				res.status(503);
-				return "";
-			}
-			AdditionInput additionInput = gson.fromJson(req.body(), AdditionInput.class);
-			BigDecimal sum = sumFor(additionInput);
+		http = Service.ignite().port(port);
 
-			res.type("application/json;charset=utf-8");
-			CalculationResult result = new CalculationResult();
-			result.result = sum;
-			return result;
-		}, new JsonTransformer());
-		Spark.awaitInitialization();
-	}
-
-	private BigDecimal sumFor(AdditionInput additionInput) {
-		return (BigDecimal) additionInput.summands.stream().reduce(BigDecimal.ZERO, new BinaryOperator<Number>() {
-			@Override
-			public Number apply(Number number, Number number2) {
-				return ((BigDecimal) number).add(BigDecimal.valueOf(number2.doubleValue()));
-			}
-		});
+		http.post("/operations/sum", "application/json", new SumHandler(onlineStatus, gson), new JsonTransformer());
+		http.awaitInitialization();
 	}
 
 	public int port() {
-		return Spark.port();
+		return http.port();
 	}
 
 	public void shutdown() {
 		try {
-			Spark.stop();
+			http.stop();
 			Thread.sleep(500);
+			http = null;
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
