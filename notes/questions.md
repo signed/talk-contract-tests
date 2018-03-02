@@ -30,3 +30,12 @@ To read:
 http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
 https://dius.com.au/resources/contract-testing/
 https://dius.com.au/2018/01/21/closing-the-loop-with-pact-verifications/
+
+Ideas:
+
+Feed verification responses from the provider back into the consumer test
+
+record retry information in the pact as well
+record connect / read timeout informatio
+record git repository information in the pact
+record contact information into the pact
