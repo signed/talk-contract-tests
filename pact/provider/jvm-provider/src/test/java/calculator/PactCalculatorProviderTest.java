@@ -47,9 +47,15 @@ public class PactCalculatorProviderTest {
 	}
 
 	@State(value = {"calculator online"})
-	public void toDefaultState() {
+	public void calculatorOnline() {
 		System.out.println("calculator online");
 		onlineStatus.online();
+	}
+
+	@State("calculator offline")
+	public void toDefaultState() {
+		System.out.println("calculator offline");
+		onlineStatus.offline();
 	}
 
 	@State("with-data")

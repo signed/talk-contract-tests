@@ -31,6 +31,10 @@ public class Calculator {
 		Gson gson = new Gson();
 		Spark.port(port);
 		Spark.post("/operations/sum", "application/json", (req, res) -> {
+			if (onlineStatus.isOffline()) {
+				res.status(503);
+				return "";
+			}
 			AdditionInput additionInput = gson.fromJson(req.body(), AdditionInput.class);
 			BigDecimal sum = sumFor(additionInput);
 
@@ -44,11 +48,11 @@ public class Calculator {
 
 	private BigDecimal sumFor(AdditionInput additionInput) {
 		return (BigDecimal) additionInput.summands.stream().reduce(BigDecimal.ZERO, new BinaryOperator<Number>() {
-					@Override
-					public Number apply(Number number, Number number2) {
-						return ((BigDecimal) number).add(BigDecimal.valueOf(number2.doubleValue()));
-					}
-				});
+			@Override
+			public Number apply(Number number, Number number2) {
+				return ((BigDecimal) number).add(BigDecimal.valueOf(number2.doubleValue()));
+			}
+		});
 	}
 
 	public int port() {
@@ -56,7 +60,12 @@ public class Calculator {
 	}
 
 	public void shutdown() {
-		Spark.stop();
+		try {
+			Spark.stop();
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
 	}
 
 }

@@ -22,6 +22,30 @@
                 }
             },
             "response": {
+                "status": 503
+            },
+            "providerStates": [
+                {
+                    "name": "calculator offline"
+                }
+            ]
+        },
+        {
+            "description": "sum two numbers",
+            "request": {
+                "method": "POST",
+                "path": "/operations/sum",
+                "headers": {
+                    "Content-Type": "application/json; charset=UTF-8"
+                },
+                "body": {
+                    "summands": [
+                        43,
+                        42
+                    ]
+                }
+            },
+            "response": {
                 "status": 200,
                 "headers": {
                     "Content-Type": "application/json;charset=utf-8"

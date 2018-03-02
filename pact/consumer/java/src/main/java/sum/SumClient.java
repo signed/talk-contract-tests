@@ -46,8 +46,11 @@ class SumClient {
 					.build();
 
 			Response response = client.newCall(request).execute();
-			Sum sum = mapper.readValue(response.body().string(), Sum.class);
-			return sum.result;
+			if (response.code() == 200) {
+				Sum sum = mapper.readValue(response.body().string(), Sum.class);
+				return sum.result;
+			}
+			throw new CalculatorOffline();
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
