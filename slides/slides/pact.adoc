@@ -63,3 +63,7 @@ pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issue
 
 === Pact: What can not be ensured with this approach
 - Firewall rules and network connectivity
+
+=== Pact: What benefits do you see?
+- You know your clients
+- Easier tracing which fields are use and by whom
