@@ -57,13 +57,6 @@ public class Calculator {
 
 	public void shutdown() {
 		Spark.stop();
-
 	}
 
-	private static class AlwaysOnline implements OnlineStatus {
-		@Override
-		public boolean isOnline() {
-			return true;
-		}
-	}
 }

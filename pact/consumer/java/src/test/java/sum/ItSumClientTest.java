@@ -2,6 +2,8 @@ package sum;
 
 import org.junit.jupiter.api.Test;
 
+import java.net.ConnectException;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
@@ -22,8 +24,7 @@ class ItSumClientTest {
 			sumClient.sum(0, 0);
 			return true;
 		} catch (RuntimeException ex) {
-			return false;
+			return !(ex.getCause() instanceof ConnectException);
 		}
-
 	}
 }

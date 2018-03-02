@@ -8,10 +8,10 @@ import au.com.dius.pact.model.MockProviderConfig;
 import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import io.pactfoundation.consumer.dsl.LambdaDsl;
-import org.jetbrains.annotations.NotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -19,6 +19,7 @@ import java.util.Map;
 
 import static au.com.dius.pact.consumer.ConsumerPactRunnerKt.runConsumerTest;
 import static au.com.dius.pact.model.MockProviderConfig.createDefault;
+import static java.lang.String.format;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 
@@ -26,7 +27,10 @@ class PactSumConsumerTest {
 
 	@BeforeEach
 	void setLocationWhereToPutTheGeneratedPactFile() {
-		System.getProperties().setProperty("pact.rootDir", "../../pacts");
+		String pactDirectory = Paths.get("../../pacts").toAbsolutePath().normalize().toString();
+		String key = "pact.rootDir";
+		System.out.println(format("%s: %s", key, pactDirectory));
+		System.getProperties().setProperty(key, pactDirectory);
 	}
 
 	public static class ConsumerPactArguments {
@@ -43,7 +47,7 @@ class PactSumConsumerTest {
 	@Test
 	void validateAndWritePacts() {
 		List<ConsumerPactArguments> fragments = Arrays.asList(sumDuringNormalOperations());
-		fragments.forEach( arguments -> {
+		fragments.forEach(arguments -> {
 			MockProviderConfig config = createDefault(PactSpecVersion.V3);
 			PactVerificationResult result = runConsumerTest(arguments.pact, config, arguments.pactTestRun);
 			checkResult(result);
