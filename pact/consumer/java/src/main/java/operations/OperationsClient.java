@@ -6,7 +6,7 @@ import okhttp3.Response;
 
 class OperationsClient {
 
-	public static class CalculatorStatus{
+	public static class CalculatorStatus {
 		public String status;
 	}
 

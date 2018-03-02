@@ -6,11 +6,10 @@ import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.model.MockProviderConfig;
 import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
-import io.pactfoundation.consumer.dsl.LambdaDsl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import pact.PactConfiguration;
 
-import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -29,10 +28,7 @@ class PactSumConsumerTest {
 
 	@BeforeEach
 	void setLocationWhereToPutTheGeneratedPactFile() {
-		String pactDirectory = Paths.get("../../pacts").toAbsolutePath().normalize().toString();
-		String key = "pact.rootDir";
-		System.out.println(format("%s: %s", key, pactDirectory));
-		System.getProperties().setProperty(key, pactDirectory);
+		PactConfiguration.setOutputLocationInSystemProperties();
 	}
 
 	@Test
@@ -61,17 +57,17 @@ class PactSumConsumerTest {
 
 		RequestResponsePact pact =
 				consumer("SumService")
-				.hasPactWith("CalculatorService")
-				.given("calculator online")
-				.uponReceiving("sum two numbers")
-				.path("/operations/sum")
-				.body(requestBody)
-				.method("POST")
-				.willRespondWith()
-				.headers(headers)
-				.status(200)
-				.body(responseBody)
-				.toPact();
+						.hasPactWith("CalculatorService")
+						.given("calculator online")
+						.uponReceiving("sum two numbers")
+						.path("/operations/sum")
+						.body(requestBody)
+						.method("POST")
+						.willRespondWith()
+						.headers(headers)
+						.status(200)
+						.body(responseBody)
+						.toPact();
 
 		return new ConsumerArguments(pact, mockServer -> {
 			SumClient providerHandler = new SumClient(mockServer.getUrl());
@@ -90,11 +86,11 @@ class PactSumConsumerTest {
 		RequestResponsePact pact = pactWithCalculatorService()
 				.given("calculator offline")
 				.uponReceiving("sum two numbers")
-					.method("POST")
-					.path("/operations/sum")
-					.body(requestBody)
+				.method("POST")
+				.path("/operations/sum")
+				.body(requestBody)
 				.willRespondWith()
-					.status(503)
+				.status(503)
 				.toPact();
 
 		return new ConsumerArguments(pact, mockServer -> {
