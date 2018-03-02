@@ -6,4 +6,6 @@ public interface OnlineStatus {
 	default boolean isOffline() {
 		return !isOnline();
 	}
+
+	void powerOff();
 }

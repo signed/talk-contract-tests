@@ -7,7 +7,7 @@ public class CalculatorService {
 
 	public static void main(String[] args) {
 		System.out.println("Started calculator");
-		new CalculatorService(9090, new AlwaysOnline()).start();
+		new CalculatorService(9090, new DefaultOnlineStatus()).start();
 	}
 
 	public static CalculatorService onRandomPort(OnlineStatus onlineStatus) {
@@ -24,6 +24,10 @@ public class CalculatorService {
 		this.onlineStatus = onlineStatus;
 	}
 
+	public static class PowerStatus{
+		public String status;
+	}
+
 	/**
 	 * http://sparkjava.com/documentation#getting-started
 	 */
@@ -31,6 +35,7 @@ public class CalculatorService {
 		http = Service.ignite().port(port);
 
 		http.post("/operations/sum", "application/json", new SumHandler(onlineStatus, gson), new JsonTransformer());
+		http.delete("/calculator/power", new DeletePowerHandler(onlineStatus), new JsonTransformer());
 		http.awaitInitialization();
 	}
 

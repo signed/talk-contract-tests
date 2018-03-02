@@ -73,7 +73,7 @@ public class PactCalculatorProviderTest {
 		private boolean online = true;
 
 		public void offline() {
-			online = false;
+			powerOff();
 		}
 
 		public void online() {
@@ -83,6 +83,11 @@ public class PactCalculatorProviderTest {
 		@Override
 		public boolean isOnline() {
 			return online;
+		}
+
+		@Override
+		public void powerOff() {
+			online = false;
 		}
 	}
 }
