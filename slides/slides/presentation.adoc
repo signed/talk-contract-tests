@@ -1,15 +1,8 @@
 :icons: font
+:slides: .
 = Contract Tests in pact
 
-WARNING: This is just a sample
-[source,javascript]
-----
-const Enum = Object.freeze({
-  ONE: 'one',
-  TWO: 'two'
-});
-----
-
+// include::{slides}/sandbox.adoc[]
 include::{slides}/motivation.adoc[]
 
 == How do we do it today?
@@ -18,8 +11,20 @@ include::{slides}/motivation.adoc[]
 * Integration environments
 * Manual research into client code
 
-include::{slides}/expectations.adoc[]
+== Integration Tests
 
+[quote, J.B Rainsberger, 'October 16, 2010 http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam[Integrated Tests Are a Scam]']
+____
+Integrated tests are a scam—a self-replicating virus that threatens to infect your code base, your project, and your team with endless pain and suffering.
+____
+
+[NOTE.speaker]
+--
+What is an Integrated test in this sense.
+--
+
+
+include::{slides}/expectations.adoc[]
 
 include::{slides}/pact.adoc[]
 

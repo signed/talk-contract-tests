@@ -1,0 +1,8 @@
+WARNING: This is just a sample
+[source,javascript]
+----
+const Enum = Object.freeze({
+  ONE: 'one',
+  TWO: 'two'
+});
+----
