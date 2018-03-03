@@ -40,3 +40,5 @@ record git repository information in the pact
 record contact information into the pact
 
 report on which fields are no longer accessed by anyone, candidates for removal!
+
+How are no longer needed pacts removed from the broker?
