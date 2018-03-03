@@ -151,11 +151,15 @@ pact test should be unit tests
 https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/
 http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
 https://dius.com.au/2016/02/03/pact-101-getting-started-with-pact-and-consumer-driven-contract-testing/
+https://dius.com.au/2018/01/21/closing-the-loop-with-pact-verifications/
 
 https://docs.pact.io/documentation/what_is_pact_good_for.html[What is pact good for and not]
 
 https://github.com/pact-foundation[pact foundation]
 https://github.com/pact-foundation/pact-specification[pact specification]
+https://docs.pact.io/documentation/implementation_guides.html[Workshops]
+https://docs.pact.io/best_practices/[Best Practices]
+https://docs.pact.io/faq/[FAQ]
 
 === Pact: Supported languages
 
