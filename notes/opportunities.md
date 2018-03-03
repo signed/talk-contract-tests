@@ -2,12 +2,13 @@
 1. Consolidate all the notes
 
 1. Watch the Atlassian Talk  https://www.youtube.com/watch?v=-6x6XBDf9sQ
+1. Watch 30min [Contract Testing with pact](https://www.youtube.com/watch?v=A5D6wcPK8Ig)
 1. Watch https://speakerdeck.com/alonpeer/move-fast-and-consumer-driven-contract-test-things
 1. Watch https://vimeo.com/239429848
 1. consolidate my notes
 1. reduce the noise of my implementation where possible
 1. Have a look at https://github.com/pact-foundation/pact-specification
-
+1. 2018 Watch https://www.youtube.com/watch?v=M4chSbbhAqU
 ---
 1. Do the pact workshop https://docs.pact.io/documentation/implementation_guides.html
 1. browse to the pact-ruby wiki https://github.com/pact-foundation/pact-ruby/wiki

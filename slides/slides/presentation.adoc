@@ -10,6 +10,7 @@ include::{slides}/motivation.adoc[]
 * not at all
 * Integration environments
 * Manual research into client code
+* Run your own tests integration tests against your dependencies for the features you use
 
 == Integration Tests
 

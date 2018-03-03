@@ -9,6 +9,13 @@ https://github.com/pact-foundation[pact-foundation-github]
 the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts]
 break up your integration tests into unit tests
 
+[NOTE.speaker]
+--
+Must Ignore pattern: The simplest model requires consumers to ignore elements that they do not recognize - hence the name of the pattern
+https://martinfowler.com/bliki/TolerantReader.html[Tolerant Reader]
+https://en.wikipedia.org/wiki/Robustness_principle[Postal's law]
+--
+
 == Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology]
 Consumer::
     A component that initiates a HTTP request to another component (the service +Provider+).
@@ -25,6 +32,11 @@ Contract::
 Pact::
     A testing tool that helps you write +Contracts+, and guarantees those +Contracts+ are satisfied.
 
+
+[NOTE.speaker]
+--
+https://www.w3.org/2001/tag/doc/versioning[Extending and Versioning Languages: Terminology]
+--
 === Pact: Goal of Contracts
 
 Contracts should be about catching:
@@ -164,6 +176,8 @@ https://github.com/pact-foundation/pact-specification[pact specification]
 https://docs.pact.io/documentation/implementation_guides.html[Workshops]
 https://docs.pact.io/best_practices/[Best Practices]
 https://docs.pact.io/faq/[FAQ]
+
+https://github.com/Mikuu/Pact-JVM-Example[Pact-JVM-Example]
 
 === Pact: Supported languages
 
