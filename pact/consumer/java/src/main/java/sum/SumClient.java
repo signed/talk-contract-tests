@@ -41,16 +41,17 @@ class SumClient {
 
 			RequestBody body = RequestBody.create(JSON, json);
 			Request request = new Request.Builder()
-					.url(url + "/operations/sum")
+					.url(url + "/basic/addition")
 					.post(body)
 					.build();
 
 			Response response = client.newCall(request).execute();
-			if (response.code() == 200) {
-				Sum sum = mapper.readValue(response.body().string(), Sum.class);
-				return sum.result;
+			if (response.code() == 503) {
+				throw new CalculatorOffline();
 			}
-			throw new CalculatorOffline();
+
+			Sum sum = mapper.readValue(response.body().string(), Sum.class);
+			return sum.result;
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}

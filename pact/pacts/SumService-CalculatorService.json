@@ -10,7 +10,7 @@
             "description": "sum two numbers",
             "request": {
                 "method": "POST",
-                "path": "/operations/sum",
+                "path": "/basic/addition",
                 "headers": {
                     "Content-Type": "application/json; charset=UTF-8"
                 },
@@ -34,7 +34,7 @@
             "description": "sum two numbers",
             "request": {
                 "method": "POST",
-                "path": "/operations/sum",
+                "path": "/basic/addition",
                 "headers": {
                     "Content-Type": "application/json; charset=UTF-8"
                 },

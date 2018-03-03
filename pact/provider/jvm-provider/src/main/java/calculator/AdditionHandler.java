@@ -8,17 +8,17 @@ import spark.Route;
 import java.math.BigDecimal;
 import java.util.function.BinaryOperator;
 
-class SumHandler implements Route {
+class AdditionHandler implements Route {
 	private final OnlineStatus onlineStatus;
 	private final Gson gson;
 
-	public SumHandler(OnlineStatus onlineStatus, Gson gson) {
+	public AdditionHandler(OnlineStatus onlineStatus, Gson gson) {
 		this.onlineStatus = onlineStatus;
 		this.gson = gson;
 	}
 
 	@Override
-	public Object handle(Request req, Response res) throws Exception {
+	public Object handle(Request req, Response res) {
 		if (onlineStatus.isOffline()) {
 			res.status(503);
 			return "";

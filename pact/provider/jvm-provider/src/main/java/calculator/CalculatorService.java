@@ -34,7 +34,7 @@ public class CalculatorService {
 	public void start() {
 		http = Service.ignite().port(port);
 
-		http.post("/operations/sum", "application/json", new SumHandler(onlineStatus, gson), new JsonTransformer());
+		http.post("/basic/addition", "application/json", new AdditionHandler(onlineStatus, gson), new JsonTransformer());
 		http.delete("/calculator/power", new DeletePowerHandler(onlineStatus), new JsonTransformer());
 		http.awaitInitialization();
 	}
