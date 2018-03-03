@@ -2,6 +2,8 @@
 1. consolidate my notes
 1. Use junit for the SumClientTests
 
+1. Read https://dius.com.au/resources/contract-testing/
+1. Battery example to showcase provider states
 1. Watch the Atlassian Talk  https://www.youtube.com/watch?v=-6x6XBDf9sQ
 1. Watch 30min [Contract Testing with pact](https://www.youtube.com/watch?v=A5D6wcPK8Ig)
 1. Watch https://speakerdeck.com/alonpeer/move-fast-and-consumer-driven-contract-test-things
