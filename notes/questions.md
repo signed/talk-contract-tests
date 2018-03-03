@@ -22,6 +22,7 @@ https://en.wikipedia.org/wiki/Robustness_principle
 How to bring technical details from the provider into the consumer, like offline because of no battery.
 How does one get them to think about this? (talk to each other)
 
+Do I just test the integration between the consumer and the provider or do I test provider domain logic as well?
 
 To read:
 
