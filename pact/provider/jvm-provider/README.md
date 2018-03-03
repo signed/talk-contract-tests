@@ -1,0 +1,1 @@
+See [pact-jvm-provider-junit](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-junit) for details and configuration options.
