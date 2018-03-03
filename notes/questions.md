@@ -20,6 +20,7 @@ Battery example to showcase provider states
 https://en.wikipedia.org/wiki/Robustness_principle
 
 How to switch out the code highlighter theme
+How to do hot reloading of the slides
 
 How to bring technical details from the provider into the consumer, like offline because of no battery.
 How does one get them to think about this? (talk to each other)
