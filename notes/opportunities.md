@@ -1,4 +1,5 @@
 1. do the slides
+1. Watch the Atlassian Talk  https://www.youtube.com/watch?v=-6x6XBDf9sQ
 1. consolidate my notes
 1. reduce the noise of my implementation where possible
 
