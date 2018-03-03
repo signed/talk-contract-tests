@@ -81,13 +81,22 @@ There is also a Pact Broker project that provides a repository of pact files. It
 
 === Pact: Matchers
 
-What elements can be matched
+Request matching (when does the mock provider return the expected values)
+* no unexpected values in the json body or query string
+* unexpected headers are allowed
 
-it is not possible to verify that something is not there.
+Response matching (during verification on the provider side)
+* make sure the types are matching (Array, String, boolean, Fixnum, ...)
+* unexpected values in JSON are ignored
+* it is not possible to verify that something is not there.
 
-https://docs.pact.io/documentation/matching.html
+[NOTE.speaker]
+--
+https://docs.pact.io/documentation/matching.html[matching]
+https://docs.pact.io/documentation/gotchas.html[gotchas]
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
 https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
+--
 
 === Pact: Findings
 
@@ -167,6 +176,8 @@ v2
 Auf 3:
  provider state -> provider states
  message queues
+
+CAUTION: If you are writing tests on the Consumer side to a different language on the Provider side, you must ensure you use a common Pact Specification between them or you will be unable to validate.
 
 === Pact: Where to use it
 - If you control code for the consumer and the provider
