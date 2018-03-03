@@ -5,6 +5,7 @@
 1. Watch https://vimeo.com/239429848
 1. consolidate my notes
 1. reduce the noise of my implementation where possible
+1. Have a look at https://github.com/pact-foundation/pact-specification
 
 ---
 
