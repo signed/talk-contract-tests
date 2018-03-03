@@ -8,7 +8,7 @@
 1. Have a look at https://github.com/pact-foundation/pact-specification
 
 ---
-
+1. browse to the pact-ruby wiki https://github.com/pact-foundation/pact-ruby/wiki
 1. listen to https://channel9.msdn.com/Shows/ARCast+with+Ron+Jacobs/ARCast-The-Evolution-of-Architecture-with-Martin-Fowler
 1. read https://martinfowler.com/articles/consumerDrivenContracts.html
 
@@ -20,3 +20,5 @@
 1. How to switch out the code highlighter theme
 1. How to do hot reloading of the slides
 1. Send pull requests for broken links
+   - write a web crawler that follows all the links
+   - write a markdown parser and run through the source

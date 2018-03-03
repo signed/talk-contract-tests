@@ -9,10 +9,57 @@ https://github.com/pact-foundation[pact-foundation-github]
 the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts]
 break up your integration tests into unit tests
 
-== Pact: Concepts
+== Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology]
+Consumer::
+    A component that initiates a HTTP request to another component (the service +Provider+).
+Provider::
+    A server that responds to an HTTP request from another component (the service +Consumer+).
+Interaction::
+    One invocation of the +Provider+ by the +Consumer+ including send arguments and expected response.
+Contract::
+    A file containing the JSON serialised +interactions+ (requests and responses) that were defined in the +Consumer+ tests. (aka the pact file)
+//    A collection of agreements between a +Consumer+ and a +Provider+ that describes the +interactions+ that can take place between them.
+//    A collection of interactions between +Consumer+ and a +Provider+.1
 
+
+Pact::
+    A testing tool that helps you write +Contracts+, and guarantees those +Contracts+ are satisfied.
+
+=== Pact: Goal of Contracts
+
+Contracts should be about catching:
+
+- bugs in the consumer
+- misunderstanding from the consumer about end-points or payload
+- breaking changes by the provider on end-points or payload
+
+Pact scenarios should not dig into the business logic of the Provider.
+
+[NOTE.speaker]
+--
+see https://docs.pact.io/best_practices/contract_tests_not_functional_tests.html for details
+--
 
 === Pact: Example
+
+"Given ... a request for ... will return ..."
+
+[source]
+----
+Given an alligator with the name Mary exists *
+Upon receiving a request to retrieve an alligator by name ** from Some Consumer
+With {"method" : "get", "path" : "/alligators/Mary" }
+Some Provider will respond with { "status" : 200, ...}
+
+* This is the provider state
+** This is the request description
+----
+
+
+[NOTE.speaker]
+--
+Pact is essentially a unit testing framework using specification by example.
+--
 
 === Pact: Verification
 
@@ -35,6 +82,8 @@ There is also a Pact Broker project that provides a repository of pact files. It
 === Pact: Matchers
 
 What elements can be matched
+
+it is not possible to verify that something is not there.
 
 https://docs.pact.io/documentation/matching.html
 https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
@@ -65,7 +114,14 @@ https://groups.google.com/forum/#!forum/pact-support[Google Group]
 
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 
+- keep pacts in sync
+- map the relationships between your services
+- track compatibility across different versions
+
+
+
 - https://pact.dius.com.au/[free hosted pact brokers]
+
 
 verification results are published back to the broker
 - What is it
@@ -76,7 +132,9 @@ verification results are published back to the broker
 
 [NOTE.speaker]
 --
-pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issuecomment-367525621[Source]
+pact test should be unit tests
+- https://github.com/DiUS/pact-jvm/issues/640#issuecomment-367525621[Source]
+- https://docs.pact.io/documentation/usage_ruby.html[Source2]
 --
 
 === Sources
@@ -85,6 +143,10 @@ https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/
 http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
 https://dius.com.au/2016/02/03/pact-101-getting-started-with-pact-and-consumer-driven-contract-testing/
 
+https://docs.pact.io/documentation/what_is_pact_good_for.html[What is pact good for and not]
+
+https://github.com/pact-foundation[pact foundation]
+https://github.com/pact-foundation/pact-specification[pact specification]
 
 === Pact: Supported languages
 
@@ -93,6 +155,8 @@ https://docs.pact.io/
 === Pact: Tools
 
 https://github.com/pact-foundation/README
+
+https://bitbucket.org/atlassian/swagger-mock-validator[swagger-mock-validator]
 
 === Pact: What changed between versions
 
