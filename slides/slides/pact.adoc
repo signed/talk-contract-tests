@@ -57,6 +57,16 @@ pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issue
 --
 
 
+=== Pact: What changed between versions
+
+v1
+
+v2
+
+Auf 3:
+ provider state -> provider states
+ message queues
+
 === Pact: Where to use it
 - If you control code for the consumer and the provider
 - public apis are not suited, better of with Swagger documentation
