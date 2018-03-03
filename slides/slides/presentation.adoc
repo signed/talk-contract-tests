@@ -15,7 +15,7 @@ include::{slides}/motivation.adoc[]
 
 [quote, J.B Rainsberger, 'October 16, 2010 http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam[Integrated Tests Are a Scam]']
 ____
-Integrated tests are a scam—a self-replicating virus that threatens to infect your code base, your project, and your team with endless pain and suffering.
+Integrated tests are a scam — a self-replicating virus that threatens to infect your code base, your project, and your team with endless pain and suffering.
 ____
 
 [NOTE.speaker]
