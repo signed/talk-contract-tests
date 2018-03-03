@@ -100,9 +100,13 @@ https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
 
 === Pact: Findings
 
-Matchers: 85 vs. 85.0
-Consumer passing arguments for state changes works only on pact-jvm?
-
+- Matchers: 85 vs. 85.0
+- Consumer passing arguments for state changes works only on pact-jvm?
+- I do not like that I have to set the output directory for pact files via system property
+- The pact-jvm project uses a mix of groovy, java, scala, kotlin code, bit daunting. Why is not clear to me.
+- Documentation on jvm specific details is cluttered and all over the repository. Outdated links and code samples as well.
+- Why do I need the dsl to define json?
+- Pact files seem to be merge when being written to a file with what is already there.
 
 [NOTE.speaker]
 --
