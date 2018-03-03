@@ -1,5 +1,8 @@
 1. do the slides
+
 1. Watch the Atlassian Talk  https://www.youtube.com/watch?v=-6x6XBDf9sQ
+1. Watch https://speakerdeck.com/alonpeer/move-fast-and-consumer-driven-contract-test-things
+1. Watch https://vimeo.com/239429848
 1. consolidate my notes
 1. reduce the noise of my implementation where possible
 
