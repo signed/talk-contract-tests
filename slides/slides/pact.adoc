@@ -1,13 +1,30 @@
 == Pact: Where does it come from
 
+[quote, the pact website]
+____
+Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.
+____
+
 https://github.com/pact-foundation[pact-foundation-github]
-the ideas from consumer driven contracts
+the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts]
 break up your integration tests into unit tests
 
 == Pact: Concepts
 
 
 === Pact: Example
+
+=== Pact: Verification
+
+would add a caution to make sure you are not affecting behavior with your mocks and stubs.
+This is about running the service as is
+
+=== Pact: How to keep the pact file in sync?
+Instead of having to build a test environment running with two servers and databases to test that our interaction between our source system and our event API works, we now have two fast tests that achieve the same result. As long as we maintain the pact file between the two systems, we can be reasonably sure that our integration is working correctly.
+
+There is a number of ways of maintaining the pact file. We can get our consumer build to publish the pact file to the CI server as a build artefact. The pact verification task supports loading the pact file from a URL. That way we can get it to always use the pact file from the latest successful build.
+
+There is also a Pact Broker project that provides a repository of pact files. It allows you to be able to verify your providers against pact files from different versions of your consumer.
 
 === Pact: Provider State
 
@@ -38,7 +55,13 @@ Limitation of the jvm implementation?
 --
 
 === Pact: Contact
-https://gitter.im/realestate-com-au/pact[Gitter]
+
+https://pact.io/[pact.io]
+https://twitter.com/pact_up[@pact_up]
+https://stackoverflow.com/questions/tagged/pact[StackOverflow]
+https://gitter.im/realestate-com-au/pact[Gitter for pact-ruby]
+https://gitter.im/DiUS/pact-jvm[Gitter for pact-jvm
+https://groups.google.com/forum/#!forum/pact-support[Google Group]
 
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 
@@ -56,6 +79,20 @@ verification results are published back to the broker
 pact test should be unit tests https://github.com/DiUS/pact-jvm/issues/640#issuecomment-367525621[Source]
 --
 
+=== Sources
+
+https://dius.com.au/2014/05/19/simplifying-micro-service-testing-with-pacts/
+http://rea.tech/enter-the-pact-matrix-or-how-to-decouple-the-release-cycles-of-your-microservices/
+https://dius.com.au/2016/02/03/pact-101-getting-started-with-pact-and-consumer-driven-contract-testing/
+
+
+=== Pact: Supported languages
+
+https://docs.pact.io/
+
+=== Pact: Tools
+
+https://github.com/pact-foundation/README
 
 === Pact: What changed between versions
 
