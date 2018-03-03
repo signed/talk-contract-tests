@@ -4,3 +4,4 @@
 1. reduce the noise of my implementation where possible
 1. How to switch out the code highlighter theme
 1. How to do hot reloading of the slides
+1. Draw some diagrams like in https://docs.pact.io/
