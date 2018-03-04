@@ -1,5 +1,11 @@
 package interactions;
 
+/**
+ * There is <a href="https://github.com/robindanzinger/chadojs/blob/master/example/example.md">chado.js</a> for javascript
+ * to perform these checks on unit test level.
+ *
+ * I do not know about a similar tool for java.
+ */
 public class AirLock {
 
     public static void main(String[] args) {
