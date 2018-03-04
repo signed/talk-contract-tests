@@ -12,17 +12,18 @@ include::{slides}/scam.adoc[]
 
 include::{slides}/pact_overview.adoc[]
 
-include::{slides}/pact.adoc[]
-
 include::{slides}/next_steps.adoc[]
 
 == !
 That's it! +
 Any Questions?
 
-== !
+
+[%notitle]
+== Melting Pot
+image::{imagedir}/bumper.jpg[canvas,size=contain]
 
 
-include::{slides}/expectations.adoc[]
+include::{slides}/melting_pot.adoc[]
 === Beyond Consumer Driven Contracts
  Session offer von Nicole im April

@@ -1,4 +1,4 @@
-== Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology]
+=== Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology]
 Consumer::
     A component that initiates a HTTP request to another component (the service +Provider+).
 Provider::
@@ -19,6 +19,16 @@ Pact::
 --
 https://www.w3.org/2001/tag/doc/versioning[Extending and Versioning Languages: Terminology]
 --
+
+=== Expectations
+* Generated Test Doubles
+* Knowing your clients
+* Changes in the API can be communicated to the clients (e.g. new status codes)
+* Works across languages
+* Can be checked in a CI environment
+* Good error messages
+* Good tooling
+
 === Pact: Goal of Contracts
 
 Contracts should be about catching:

@@ -1,4 +1,3 @@
-
 == http://pact.io[pact.io^]
 [quote, the pact website]
 ____
