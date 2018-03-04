@@ -8,10 +8,9 @@ ____
 [NOTE.speaker]
 --
 * break up your integration tests into unit tests
-* the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts]
-* Must Ignore pattern: The simplest model requires consumers to ignore elements that they do not recognize - hence the name of the pattern
-* https://martinfowler.com/bliki/TolerantReader.html[Tolerant Reader]
-* https://en.wikipedia.org/wiki/Robustness_principle[Postal's law]
+* the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts^]
+* https://martinfowler.com/bliki/TolerantReader.html[Tolerant Reader^]
+* https://en.wikipedia.org/wiki/Robustness_principle[Postal's law^]
 --
 
 [%notitle]

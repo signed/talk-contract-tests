@@ -5,7 +5,7 @@ An approach that captures the interactions between two components and serialises
 ____
 
 == Handled Today?
-* Not at all _aka_ commit and prey
+* Not at all _aka_ commit and pray
 * Manual research into client code
 * Hand written Test Doubles
 * Integration tests across services

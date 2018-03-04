@@ -1,0 +1,12 @@
+== I'm intrigued, what next
+* http://pact.io[pact.io^]
+* https://www.youtube.com/watch?v=-6x6XBDf9sQ[Verifying Microservice Integrations with Contract Testing^]
+* https://docs.pact.io/documentation/implementation_guides.html[Language specific workshops^]
+* https://github.com/pact-foundation[pact-foundation on github^]
+
+=== Where to get help
+* https://twitter.com/pact_up[@pact_up^]
+* https://stackoverflow.com/questions/tagged/pact[StackOverflow^]
+* https://gitter.im/DiUS/pact-jvm[Gitter for pact-jvm^]
+* https://gitter.im/realestate-com-au/pact[Gitter for pact-ruby^]
+* https://groups.google.com/forum/#!forum/pact-support[Google Group^]

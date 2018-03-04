@@ -115,9 +115,6 @@ Limitation of the jvm implementation?
 - keep pacts in sync
 - map the relationships between your services
 - track compatibility across different versions
-
-
-
 - https://pact.dius.com.au/[free hosted pact brokers]
 
 
