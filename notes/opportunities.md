@@ -5,6 +5,7 @@
 
 1. Battery example to showcase provider states
 1. reduce the noise of my implementation where possible
+
 ---
 
 1. Have a look at https://github.com/pact-foundation/pact-specification
@@ -23,3 +24,4 @@
    - write a web crawler that follows all the links
    - write a markdown parser and run through the source
 1. List of resources look through it https://dius.com.au/resources/game-day/reference-links/
+1. How to do a proper full screen in the browser
