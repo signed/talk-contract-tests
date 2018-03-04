@@ -2,34 +2,20 @@
 :slides: .
 = Contract Tests
 
-// include::{slides}/sandbox.adoc[]
+include::{slides}/sandbox.adoc[]
+
 include::{slides}/motivation.adoc[]
 
-== Integration Tests
-[quote, J.B Rainsberger, 'October 16, 2010 http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam[Integrated Tests Are a Scam]']
-____
-Integrated tests are a scam — a self-replicating virus that threatens to infect your code base, your project, and your team with endless pain and suffering.
-____
-
-[quote, J.B Rainsberger, 'October 16, 2010 http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam[Integrated Tests Are a Scam]']
-____
-I use the term integrated test to mean any test whose result (pass or fail) depends on the correctness of the implementation of more than one piece of non-trivial behavior.
-____
-
-[NOTE.speaker]
---
-What is an Integrated test in this sense.
-Car repair example Karlsruhe-Frankfurt
-Login Example
---
-
+include::{slides}/scam.adoc[]
 
 include::{slides}/pact.adoc[]
 
+== !
+Q&A
 
-== Beyond Consumer Driven Contracts
- Session offer von Nicole im April
+== !
 
-== Q/A
 
 include::{slides}/expectations.adoc[]
+=== Beyond Consumer Driven Contracts
+ Session offer von Nicole im April

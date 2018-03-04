@@ -4,3 +4,7 @@ For hints on how to edit the slides have a look at [asciidoctor-revealjs][adoc-r
 
 [adoc-reveal]: https://asciidoctor.org/docs/asciidoctor-revealjs
 [quick]: https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/
+
+# Shortcuts
+S opens speaker notes  
+B blacks the screen
