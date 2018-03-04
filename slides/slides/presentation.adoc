@@ -5,12 +5,7 @@
 // include::{slides}/sandbox.adoc[]
 include::{slides}/motivation.adoc[]
 
-== How do we do it today?
-* Hand written Test Doubles with hand written tests
-* Run your own tests integration tests against your dependencies for the features you use
-
 == Integration Tests
-
 [quote, J.B Rainsberger, 'October 16, 2010 http://blog.thecodewhisperer.com/permalink/integrated-tests-are-a-scam[Integrated Tests Are a Scam]']
 ____
 Integrated tests are a scam — a self-replicating virus that threatens to infect your code base, your project, and your team with endless pain and suffering.
@@ -21,7 +16,6 @@ ____
 I use the term integrated test to mean any test whose result (pass or fail) depends on the correctness of the implementation of more than one piece of non-trivial behavior.
 ____
 
-
 [NOTE.speaker]
 --
 What is an Integrated test in this sense.
@@ -30,10 +24,12 @@ Login Example
 --
 
 
-include::{slides}/expectations.adoc[]
-
 include::{slides}/pact.adoc[]
 
 
 == Beyond Consumer Driven Contracts
  Session offer von Nicole im April
+
+== Q/A
+
+include::{slides}/expectations.adoc[]

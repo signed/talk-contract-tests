@@ -27,11 +27,25 @@ const TransitionSpeed = Object.freeze({
     FAST: 'fast'
 });
 
+const Theme = Object.freeze({
+  BLACK: 'black',
+  WHITE: 'white',
+  BEIGE: 'beige',
+  SIMPLE: 'simple',
+  MOON: 'moon',
+  NIGHT: 'night',
+  LEAGUE: 'league',
+  SERIF: 'serif',
+  SKY: 'sky',
+  SOLARIZED: 'solarized'
+});
+
 // https://asciidoctor.org/docs/asciidoctor-revealjs/#reveal-js-options
 const asciidoctor_reveal_js = {
     'revealjsdir': base_dir + '/node_modules/reveal.js@',
     'revealjs_history': true,
-    'revealjs_transition': Transition.SLIDE,
+    'revealjs_theme': Theme.BEIGE,
+    'revealjs_transition': Transition.DEFAULT,
     'revealjs_transitionSpeed': TransitionSpeed.DEFAULT,
     'source-highlighter': 'highlightjs'
 };

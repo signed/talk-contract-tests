@@ -1,4 +1,4 @@
-== What is Contract testing ?
+== What is Contract testing
 [quote, this quote is looking for its author]
 ____
 An approach that captures the interactions between two components and serialises them into a contract, which can then be used to verify that both parties adhere to it.
