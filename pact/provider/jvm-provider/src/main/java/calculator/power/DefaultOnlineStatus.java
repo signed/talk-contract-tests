@@ -1,6 +1,8 @@
-package calculator;
+package calculator.power;
 
-class DefaultOnlineStatus implements OnlineStatus {
+import calculator.OnlineStatus;
+
+public class DefaultOnlineStatus implements OnlineStatus {
 	private boolean online = true;
 
 	@Override

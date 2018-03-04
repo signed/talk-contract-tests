@@ -1,13 +1,14 @@
-package calculator;
+package calculator.power;
 
+import calculator.OnlineStatus;
 import spark.Request;
 import spark.Response;
 import spark.Route;
 
-class DeletePowerHandler implements Route {
+public class DeletePowerHandler implements Route {
 	private OnlineStatus onlineStatus;
 
-	DeletePowerHandler(OnlineStatus onlineStatus) {
+	public DeletePowerHandler(OnlineStatus onlineStatus) {
 		this.onlineStatus = onlineStatus;
 	}
 
@@ -17,7 +18,7 @@ class DeletePowerHandler implements Route {
 
 		response.status(200);
 		response.type("application/json");
-		CalculatorService.PowerStatus status = new CalculatorService.PowerStatus();
+		PowerStatus status = new PowerStatus();
 		status.status = "off";
 		return status;
 	}

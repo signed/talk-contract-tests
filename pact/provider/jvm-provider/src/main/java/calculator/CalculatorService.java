@@ -1,5 +1,8 @@
 package calculator;
 
+import calculator.addition.AdditionHandler;
+import calculator.power.DefaultOnlineStatus;
+import calculator.power.DeletePowerHandler;
 import com.google.gson.Gson;
 import spark.Service;
 
@@ -24,11 +27,7 @@ public class CalculatorService {
 		this.onlineStatus = onlineStatus;
 	}
 
-	public static class PowerStatus{
-		public String status;
-	}
-
-	/**
+    /**
 	 * http://sparkjava.com/documentation#getting-started
 	 */
 	public void start() {

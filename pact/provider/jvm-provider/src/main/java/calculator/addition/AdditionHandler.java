@@ -1,5 +1,6 @@
-package calculator;
+package calculator.addition;
 
+import calculator.OnlineStatus;
 import com.google.gson.Gson;
 import spark.Request;
 import spark.Response;
@@ -9,11 +10,11 @@ import java.math.BigDecimal;
 
 import static java.math.BigDecimal.ZERO;
 
-class AdditionHandler implements Route {
+public class AdditionHandler implements Route {
 	private final OnlineStatus onlineStatus;
 	private final Gson gson;
 
-	AdditionHandler(OnlineStatus onlineStatus, Gson gson) {
+	public AdditionHandler(OnlineStatus onlineStatus, Gson gson) {
 		this.onlineStatus = onlineStatus;
 		this.gson = gson;
 	}
