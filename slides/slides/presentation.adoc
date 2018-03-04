@@ -17,7 +17,8 @@ include::{slides}/pact.adoc[]
 include::{slides}/next_steps.adoc[]
 
 == !
-Q&A
+That's it! +
+Any Questions?
 
 == !
 
