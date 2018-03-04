@@ -16,6 +16,7 @@ import org.junit.jupiter.api.Test;
 class ConsumerTest {
 
     private final Provider provider = mock(Provider.class);
+    private final Consumer consumer = new Consumer(provider);
     private int input = anyInput();
 
     @Test
@@ -26,7 +27,7 @@ class ConsumerTest {
     }
 
     private Result consumerResult() {
-        Consumer consumer = new Consumer(provider);
+
         return consumer.upperCaseResult(input);
     }
 
