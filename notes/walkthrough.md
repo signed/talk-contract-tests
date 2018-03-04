@@ -51,4 +51,13 @@
  * Pact
    * Interactions
    * Fragment
+   
+   
+* Code Samples
+  * Existing approach with integration tests
+  * Consumer requests new functionality
+    * Operations client wanting timing information on operations
+  * Provider breaks existing functionality
+  * Provider wants to make breaking changes
+  * Consumer breaks contract
 
