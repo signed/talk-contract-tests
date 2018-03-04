@@ -1,8 +1,15 @@
 
 [%notitle]
 == Grand Announcement
+basedir: {basedir}
 
-image::{slides}/images/cover.jpg[background, size=cover]
+imagedir: {imagedir}
+
+slides: {slides}
+
+//image::https://upload.wikimedia.org/wikipedia/commons/b/b2/Hausziege_04.jpg[canvas,size=contain]
+//image::file:///Users/signed/dev/github/signed/talk-contract-tests/slides/images/pact_step_1.png[canvas,size=contain]
+image::{imagedir}/pact_step_1.png[canvas,size=contain]
 
 [background-color="yellow"]
 == The sandbox

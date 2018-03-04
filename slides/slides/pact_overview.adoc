@@ -1,0 +1,8 @@
+==
+
+[%notitle]
+=== Step 1
+image::{imagedir}/pact_step_1.png[canvas,size=contain]
+[%notitle]
+=== Step 2
+image::{imagedir}/pact_step_2.png[canvas,size=contain]
