@@ -3,7 +3,10 @@ package interfaces;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Vector;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,7 +20,9 @@ import org.junit.jupiter.api.Test;
 class ListContractTest {
 
     private final List<String> list = new ArrayList<>();
+    //private final List<String> list = new LinkedList<>();
     //private final List<String> list = new SurpriseList<>();
+    //private final List<String> list = Collections.unmodifiableList(new ArrayList<>());
 
     @Test
     void newlyCreatedListShouldBeEmpty() {
