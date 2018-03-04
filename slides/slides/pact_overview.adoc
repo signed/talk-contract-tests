@@ -1,8 +1,23 @@
-==
+
+== http://pact.io[pact.io^]
+[quote, the pact website]
+____
+Enables consumer driven contract testing, providing a mock service and DSL for the consumer project, and interaction playback and verification for the service provider project.
+____
+
+[NOTE.speaker]
+--
+* break up your integration tests into unit tests
+* the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts]
+* Must Ignore pattern: The simplest model requires consumers to ignore elements that they do not recognize - hence the name of the pattern
+* https://martinfowler.com/bliki/TolerantReader.html[Tolerant Reader]
+* https://en.wikipedia.org/wiki/Robustness_principle[Postal's law]
+--
 
 [%notitle]
 === Step 1
 image::{imagedir}/pact_step_1.png[canvas,size=contain]
+
 [%notitle]
 === Step 2
 image::{imagedir}/pact_step_2.png[canvas,size=contain]
