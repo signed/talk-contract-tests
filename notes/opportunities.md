@@ -1,5 +1,4 @@
 1. do the slides
-1. consolidate my notes
 1. Use junit for the SumClientTests
 
 1. Read https://dius.com.au/resources/contract-testing/
