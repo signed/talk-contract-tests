@@ -1,8 +1,7 @@
 package calculator;
 
-import com.google.gson.annotations.JsonAdapter;
+import java.math.BigDecimal;
 
 public class CalculationResult {
-	@JsonAdapter(StripTrailingZerosAfterTheDot.class)
-	public Number result;
+	public BigDecimal result;
 }
