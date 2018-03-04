@@ -1,15 +1,12 @@
 :icons: font
 :slides: .
-= Contract Tests in pact
+= Contract Tests
 
 // include::{slides}/sandbox.adoc[]
 include::{slides}/motivation.adoc[]
 
 == How do we do it today?
 * Hand written Test Doubles with hand written tests
-* not at all
-* Integration environments
-* Manual research into client code
 * Run your own tests integration tests against your dependencies for the features you use
 
 == Integration Tests

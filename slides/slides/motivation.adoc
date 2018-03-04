@@ -1,10 +1,14 @@
+== What is Contract testing ?
+[quote, this quote is looking for its author]
+____
+An approach that captures the interactions between two components and serialises them into a contract, which can then be used to verify that both parties adhere to it.
+____
 
-== What's the problem?
-
-* Slow Integration tests
-* Will this change break our clients? Lets do a v2/
-* Feedback
-
-
-== What is Contract testing
-an approach that captures the interactions between two services and serialises them into a contract, which can then be used to verify that both parties adhere to it.
+== How we handle this today?
+* Not at all aka commit and prey
+* Manual research into client code
+* Hand written Test Doubles
+* Integration tests across services
+* Integration environments
+* End to End tests across the whole system
+* Lets do a v2/
