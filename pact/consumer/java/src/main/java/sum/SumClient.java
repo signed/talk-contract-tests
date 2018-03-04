@@ -8,6 +8,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,11 +17,11 @@ class SumClient {
     private static final MediaType JSON = MediaType.parse("application/json;charset=utf-8");
 
     private static class Addition {
-        public List<Number> summands;
+        public List<Double> summands;
     }
 
     private static class Sum {
-        public Number result;
+        public Double result;
     }
 
     private final OkHttpClient client = new OkHttpClient();
@@ -32,7 +33,7 @@ class SumClient {
         this.url = url;
     }
 
-    public Number sum(Number summand1, Number summand2) {
+    public Double sum(Double summand1, Double summand2) {
         try {
             Addition addition = new Addition();
             addition.summands = Arrays.asList(summand1, summand2);

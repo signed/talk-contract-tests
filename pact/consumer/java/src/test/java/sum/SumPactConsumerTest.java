@@ -6,7 +6,6 @@ import au.com.dius.pact.consumer.PactVerification;
 import au.com.dius.pact.consumer.dsl.DslPart;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
 import au.com.dius.pact.model.RequestResponsePact;
-import org.jetbrains.annotations.NotNull;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,17 +28,25 @@ public class SumPactConsumerTest {
         Configuration.setOutputLocationInSystemProperties();
     }
 
+    @Test
+    @PactVerification(fragment = "requestForSumWhileCalculatorOnline")
+    public void validateSumWhileCalculatorOnlineTest() {
+        SumClient providerHandler = new SumClient(mockProvider.getUrl());
+        Double sum = providerHandler.sum(43.5, 42.2);
+        assertThat(sum).isEqualTo(85.7);
+    }
+
     @Pact(consumer = "SumService")
     public RequestResponsePact requestForSumWhileCalculatorOnline(PactDslWithProvider builder) {
 
         DslPart requestBody = newJsonBody((o) -> {
-            o.array("summands", (s) -> {
-                s.numberValue(43).numberValue(42);
+            o.array("summands", (summands) -> {
+                summands.decimalType(43.5).decimalType(42.2);
             });
         }).build();
 
-        DslPart responseBody = newJsonBody((o) -> {
-            o.numberValue("result", 85);
+        DslPart responseBody = newJsonBody((body) -> {
+            body.decimalType("result", 85.7);
         }).build();
 
         return builder
@@ -56,26 +63,18 @@ public class SumPactConsumerTest {
             .toPact();
     }
 
-    private Map<String, String> contentTypeUtf8EncodedJson() {
-        Map<String, String> headers = new HashMap<>();
-        headers.put("Content-Type", "application/json;charset=utf-8");
-        return headers;
-    }
-
     @Test
-    @PactVerification(fragment = "requestForSumWhileCalculatorOnline")
-    public void validateSumWhileCalculatorOnlineTest() {
-        SumClient providerHandler = new SumClient(mockProvider.getUrl());
-        Number sum = providerHandler.sum(43, 42);
-        assertThat(sum).isEqualTo(85);
+    @PactVerification(fragment = "requestForSumWhileCalculatorInMaintenance")
+    public void validateSumWhileCalculatorInMaintenanceTest() {
+        assertThrows(CalculatorOffline.class, () -> new SumClient(mockProvider.getUrl()).sum(0.0, 0.0));
     }
 
     @Pact(consumer = "SumService")
     public RequestResponsePact requestForSumWhileCalculatorInMaintenance(PactDslWithProvider builder) {
 
-        DslPart requestBody = newJsonBody((o) -> {
-            o.array("summands", (s) -> {
-                s.numberValue(43).numberValue(42);
+        DslPart requestBody = newJsonBody((body) -> {
+            body.array("summands", (summands) -> {
+                summands.decimalType(anyDecimal()).decimalType(anyDecimal());
             });
         }).build();
 
@@ -90,10 +89,14 @@ public class SumPactConsumerTest {
             .toPact();
     }
 
-    @Test
-    @PactVerification(fragment = "requestForSumWhileCalculatorInMaintenance")
-    public void validateSumWhileCalculatorInMaintenanceTest() {
-        assertThrows(CalculatorOffline.class, () -> new SumClient(mockProvider.getUrl()).sum(43, 42));
+    private double anyDecimal() {
+        return 0.0;
+    }
+
+    private Map<String, String> contentTypeUtf8EncodedJson() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Content-Type", "application/json;charset=utf-8");
+        return headers;
     }
 
 }
