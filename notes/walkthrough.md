@@ -58,7 +58,7 @@
   * Consumer requests new functionality
     * Operations client wanting timing information on operations
   * Provider breaks existing functionality
-  * Provider wants to make breaking changes
+  * Provider wants to make breaking changes (e.g. 400 if summands is empty)
   * Consumer breaks contract
 
 
@@ -67,6 +67,6 @@
   Who actually uses this field?
 - Spring upgrades
 
-- Consumer can can change its test if they are breaking
-- Provider can can change its test if they are breaking
+- Consumer can change its test if they are breaking
+- Provider can change its test if they are breaking
 - Contract can only be changed if booth agree 
