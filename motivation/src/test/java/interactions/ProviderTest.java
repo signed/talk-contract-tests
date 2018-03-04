@@ -1,6 +1,7 @@
 package interactions;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
@@ -20,7 +21,7 @@ class ProviderTest {
     @Disabled("We still have plenty of money")
     void noLongerWantToPayTheLicenseSorry() {
         argument = anyNegativeInput();
-        RuntimeException exception = Assertions.assertThrows(RuntimeException.class, this::providerResult);
+        RuntimeException exception = assertThrows(RuntimeException.class, this::providerResult);
 
         assertThat(exception).hasMessage("Nope, sorry no more money for this");
     }
