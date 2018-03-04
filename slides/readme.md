@@ -8,3 +8,4 @@ For hints on how to edit the slides have a look at [asciidoctor-revealjs][adoc-r
 # Shortcuts
 S opens speaker notes  
 B blacks the screen
+alt + click zooms to the cursor location
