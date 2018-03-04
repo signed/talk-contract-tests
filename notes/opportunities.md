@@ -1,6 +1,7 @@
 1. Draw some diagrams like in https://docs.pact.io/
 1. do the slides
 1. Use junit for the SumClientTests
+1. 85 adn 85.0
 
 1. Battery example to showcase provider states
 1. reduce the noise of my implementation where possible
