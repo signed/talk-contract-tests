@@ -128,6 +128,12 @@ maybe lack of knowledge/experience with the tool?
 Limitation of the jvm implementation?
 --
 
+=== Pact: How to get started
+
+https://www.youtube.com/watch?v=-6x6XBDf9sQ[Verifying Microservice Integrations with Contract Testing - Atlassian Summit 2016]
+https://docs.pact.io/documentation/implementation_guides.html[Workshops]
+
+
 === Pact: Contact
 
 https://pact.io/[pact.io]
