@@ -4,15 +4,11 @@
 
 1. Battery example to showcase provider states
 1. reduce the noise of my implementation where possible
-
-1. Watch https://speakerdeck.com/alonpeer/move-fast-and-consumer-driven-contract-test-things
-1. Watch https://vimeo.com/239429848
-
 ---
 
 1. Have a look at https://github.com/pact-foundation/pact-specification
-1. Do the pact workshop https://docs.pact.io/documentation/implementation_guides.html
 1. browse to the pact-ruby wiki https://github.com/pact-foundation/pact-ruby/wiki
+1. Do the pact workshop https://docs.pact.io/documentation/implementation_guides.html
 1. listen to https://channel9.msdn.com/Shows/ARCast+with+Ron+Jacobs/ARCast-The-Evolution-of-Architecture-with-Martin-Fowler
 1. read https://martinfowler.com/articles/consumerDrivenContracts.html
 
