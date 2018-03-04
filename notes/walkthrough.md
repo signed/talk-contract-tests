@@ -61,3 +61,12 @@
   * Provider wants to make breaking changes
   * Consumer breaks contract
 
+
+- renaming a field / remove a field
+  Who are our clients?
+  Who actually uses this field?
+- Spring upgrades
+
+- Consumer can can change its test if they are breaking
+- Provider can can change its test if they are breaking
+- Contract can only be changed if booth agree 

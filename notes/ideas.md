@@ -4,4 +4,4 @@
 * record connect / read timeout information
 * record git repository information in the pact
 * record contact information into the pact
-* rollback verification
+* rollback verification; Can we role back? Which services do we have to role back?
