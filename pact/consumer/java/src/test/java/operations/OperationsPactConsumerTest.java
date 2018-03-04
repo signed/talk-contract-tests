@@ -8,18 +8,18 @@ import au.com.dius.pact.model.RequestResponsePact;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import pact.PactConfiguration;
+import pact.Configuration;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class PactOperationsConsumerTest {
+public class OperationsPactConsumerTest {
 
 	@Rule
 	public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", this);
 
 	@Before
 	public void setUp() {
-		PactConfiguration.setOutputLocationInSystemProperties();
+		Configuration.setOutputLocationInSystemProperties();
 	}
 
 	@Pact(consumer = "OperationsService")

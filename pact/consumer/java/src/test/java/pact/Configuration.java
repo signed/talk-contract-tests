@@ -4,7 +4,7 @@ import java.nio.file.Paths;
 
 import static java.lang.String.format;
 
-public class PactConfiguration {
+public class Configuration {
 
 	public static void setOutputLocationInSystemProperties() {
 		String pactDirectory = Paths.get("../../pacts").toAbsolutePath().normalize().toString();

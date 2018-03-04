@@ -16,7 +16,7 @@ import java.util.Map;
 @Provider("CalculatorService")
 //@PactFolder("../../pacts")
 @PactBroker(host = "pactbroker", port = "80")
-public class PactCalculatorProviderTest {
+public class CalculatorPactProviderTest {
 
 	private final OnlineStatusFake onlineStatus = new OnlineStatusFake();
 	private final CalculatorService calculatorService = CalculatorService.onRandomPort(onlineStatus);
@@ -69,25 +69,4 @@ public class PactCalculatorProviderTest {
 	@TestTarget
 	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculatorService::port);
 
-	private static class OnlineStatusFake implements OnlineStatus {
-		private boolean online = true;
-
-		public void offline() {
-			powerOff();
-		}
-
-		public void online() {
-			online = true;
-		}
-
-		@Override
-		public boolean isOnline() {
-			return online;
-		}
-
-		@Override
-		public void powerOff() {
-			online = false;
-		}
-	}
 }

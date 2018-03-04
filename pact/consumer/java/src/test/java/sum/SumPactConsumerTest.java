@@ -8,7 +8,7 @@ import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import pact.PactConfiguration;
+import pact.Configuration;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,11 +24,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class PactSumConsumerTest {
+class SumPactConsumerTest {
 
 	@BeforeEach
 	void setLocationWhereToPutTheGeneratedPactFile() {
-		PactConfiguration.setOutputLocationInSystemProperties();
+		Configuration.setOutputLocationInSystemProperties();
 	}
 
 	@Test
