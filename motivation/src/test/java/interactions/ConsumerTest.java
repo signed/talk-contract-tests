@@ -27,7 +27,6 @@ class ConsumerTest {
     }
 
     private Result consumerResult() {
-
         return consumer.upperCaseResult(input);
     }
 
