@@ -2,7 +2,7 @@ package calculator.power;
 
 import calculator.OnlineStatus;
 
-public class DefaultOnlineStatus implements OnlineStatus {
+public class InMemoryOnlineStatus implements OnlineStatus {
 	private boolean online = true;
 
 	@Override
@@ -14,4 +14,9 @@ public class DefaultOnlineStatus implements OnlineStatus {
 	public void powerOff() {
 		online = false;
 	}
+
+    @Override
+    public void powerOn() {
+        online = true;
+    }
 }

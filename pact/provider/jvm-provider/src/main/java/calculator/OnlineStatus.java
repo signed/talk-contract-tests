@@ -8,4 +8,6 @@ public interface OnlineStatus {
 	}
 
 	void powerOff();
+
+    void powerOn();
 }

@@ -1,7 +1,7 @@
 package calculator;
 
 import calculator.addition.AdditionHandler;
-import calculator.power.DefaultOnlineStatus;
+import calculator.power.InMemoryOnlineStatus;
 import calculator.power.DeletePowerHandler;
 import com.google.gson.Gson;
 import spark.Service;
@@ -10,7 +10,7 @@ public class CalculatorService {
 
 	public static void main(String[] args) {
 		System.out.println("Started calculator");
-		new CalculatorService(9090, new DefaultOnlineStatus()).start();
+		new CalculatorService(9090, new InMemoryOnlineStatus()).start();
 	}
 
 	public static CalculatorService onRandomPort(OnlineStatus onlineStatus) {

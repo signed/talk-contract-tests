@@ -5,6 +5,7 @@ import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.loader.PactBroker;
 import au.com.dius.pact.provider.junit.target.TestTarget;
+import calculator.power.InMemoryOnlineStatus;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -18,7 +19,7 @@ import java.util.Map;
 @PactBroker(host = "pactbroker", port = "80")
 public class CalculatorPactProviderTest {
 
-	private final OnlineStatusFake onlineStatus = new OnlineStatusFake();
+    private final OnlineStatus onlineStatus = new InMemoryOnlineStatus();
 	private final CalculatorService calculatorService = CalculatorService.onRandomPort(onlineStatus);
 
 	@BeforeClass
@@ -49,13 +50,13 @@ public class CalculatorPactProviderTest {
 	@State(value = {"calculator online"})
 	public void calculatorOnline() {
 		System.out.println("calculator online");
-		onlineStatus.online();
+		onlineStatus.powerOn();
 	}
 
 	@State("calculator offline")
 	public void toDefaultState() {
 		System.out.println("calculator offline");
-		onlineStatus.offline();
+		onlineStatus.powerOff();
 	}
 
 	@State("with-data")
