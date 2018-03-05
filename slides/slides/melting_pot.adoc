@@ -1,90 +1,4 @@
-=== Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology]
-Consumer::
-    A component that initiates a HTTP request to another component (the service +Provider+).
-Provider::
-    A server that responds to an HTTP request from another component (the service +Consumer+).
-Interaction::
-    One invocation of the +Provider+ by the +Consumer+ including send arguments and expected response.
-Contract::
-    A file containing the JSON serialised +interactions+ (requests and responses) that were defined in the +Consumer+ tests. (aka the pact file)
-//    A collection of agreements between a +Consumer+ and a +Provider+ that describes the +interactions+ that can take place between them.
-//    A collection of interactions between +Consumer+ and a +Provider+.1
-
-
-Pact::
-    A testing tool that helps you write +Contracts+, and guarantees those +Contracts+ are satisfied.
-
-
-[NOTE.speaker]
---
-https://www.w3.org/2001/tag/doc/versioning[Extending and Versioning Languages: Terminology]
---
-
-=== Expectations
-* Generated Test Doubles
-* Knowing your clients
-* Changes in the API can be communicated to the clients (e.g. new status codes)
-* Works across languages
-* Can be checked in a CI environment
-* Good error messages
-* Good tooling
-
-=== Pact: Goal of Contracts
-
-Contracts should be about catching:
-
-- bugs in the consumer
-- misunderstanding from the consumer about end-points or payload
-- breaking changes by the provider on end-points or payload
-
-Pact scenarios should not dig into the business logic of the Provider.
-
-[NOTE.speaker]
---
-see https://docs.pact.io/best_practices/contract_tests_not_functional_tests.html for details
---
-
-=== Pact: Example
-
-"Given ... a request for ... will return ..."
-
-[source]
-----
-Given an alligator with the name Mary exists *
-Upon receiving a request to retrieve an alligator by name ** from Some Consumer
-With {"method" : "get", "path" : "/alligators/Mary" }
-Some Provider will respond with { "status" : 200, ...}
-
-* This is the provider state
-** This is the request description
-----
-
-
-[NOTE.speaker]
---
-Pact is essentially a unit testing framework using specification by example.
---
-
-=== Pact: Verification
-
-would add a caution to make sure you are not affecting behavior with your mocks and stubs.
-This is about running the service as is
-
-=== Pact: How to keep the pact file in sync?
-Instead of having to build a test environment running with two servers and databases to test that our interaction between our source system and our event API works, we now have two fast tests that achieve the same result. As long as we maintain the pact file between the two systems, we can be reasonably sure that our integration is working correctly.
-
-There is a number of ways of maintaining the pact file. We can get our consumer build to publish the pact file to the CI server as a build artefact. The pact verification task supports loading the pact file from a URL. That way we can get it to always use the pact file from the latest successful build.
-
-There is also a Pact Broker project that provides a repository of pact files. It allows you to be able to verify your providers against pact files from different versions of your consumer.
-
-=== Pact: Provider State
-
-=== Pact: Provider Side Changes break Client
-
-* forget IgnoreUnknowns on Java DTO and add additional fields on the Provider.
-
 === Pact: Matchers
-
 Request matching (when does the mock provider return the expected values)
 * no unexpected values in the json body or query string
 * unexpected headers are allowed
@@ -102,23 +16,57 @@ https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-consumer-junit
 https://github.com/DiUS/pact-jvm/wiki/Matching#matcher-path-expressions
 --
 
-=== Pact: Findings
-
-- Matchers: 85 vs. 85.0
-- Consumer passing arguments for state changes works only on pact-jvm?
-- I do not like that I have to set the output directory for pact files via system property
-- The pact-jvm project uses a mix of groovy, java, scala, kotlin code, bit daunting. Why is not clear to me.
-- Documentation on jvm specific details is cluttered and all over the repository. Outdated links and code samples as well.
-- Why do I need the dsl to define json?
-- Pact files seem to be merge when being written to a file with what is already there.
+=== Pact: https://docs.pact.io/documentation/how_does_pact_work.html[Terminology^]
+Consumer::
+    A component that initiates a HTTP request to another component (the service +Provider+).
+Provider::
+    A server that responds to an HTTP request from another component (the service +Consumer+).
+Interaction::
+    One invocation of the +Provider+ by the +Consumer+ including send arguments and expected response.
+Contract::
+    A file containing the JSON serialised +interactions+ (requests and responses) that were defined in the +Consumer+ tests. (aka the pact file)
 
 [NOTE.speaker]
 --
-equals is used to compare numbers
-matching more complex string cases seem to be fiddly.
-maybe lack of knowledge/experience with the tool?
-Limitation of the jvm implementation?
+https://www.w3.org/2001/tag/doc/versioning[Extending and Versioning Languages: Terminology]
 --
+
+=== Pact: Example
+
+"Given ... a request for ... will return ..."
+
+[source]
+----
+Given an alligator with the name Mary exists *
+Upon receiving a request to retrieve an alligator by name ** from Some Consumer
+With {"method" : "get", "path" : "/alligators/Mary" }
+Some Provider will respond with { "status" : 200, ...}
+
+* This is the provider state
+** This is the request description
+----
+
+[NOTE.speaker]
+--
+Pact is essentially a unit testing framework using specification by example.
+--
+
+=== Pact: Verification
+
+would add a caution to make sure you are not affecting behavior with your mocks and stubs.
+This is about running the service as is
+
+=== Pact: How to keep the pact file in sync?
+Instead of having to build a test environment running with two servers and databases to test that our interaction between our source system and our event API works, we now have two fast tests that achieve the same result.
+As long as we maintain the pact file between the two systems, we can be reasonably sure that our integration is working correctly.
+
+There is a number of ways of maintaining the pact file.
+We can get our consumer build to publish the pact file to the CI server as a build artifact.
+The pact verification task supports loading the pact file from a URL.
+That way we can get it to always use the pact file from the latest successful build.
+
+There is also a Pact Broker project that provides a repository of pact files.
+It allows you to be able to verify your providers against pact files from different versions of your consumer.
 
 === https://github.com/pact-foundation/pact_broker[Pact Broker]
 
@@ -129,7 +77,6 @@ Limitation of the jvm implementation?
 
 
 verification results are published back to the broker
-- What is it
 - https://github.com/pact-foundation/pact_broker[pact-broker on github]
 - https://github.com/pact-foundation/pact_broker/wiki/Overview
 - https://github.com/pact-foundation/pact_broker/wiki/Using-tags
@@ -187,8 +134,3 @@ CAUTION: If you are writing tests on the Consumer side to a different language o
 
 === Pact: What can not be ensured with this approach
 - Firewall rules and network connectivity
-
-=== Pact: What benefits do you see?
-- You know your clients
-- You get people from the consumer talking to the producer people
-- Easier tracing which fields are use and by whom

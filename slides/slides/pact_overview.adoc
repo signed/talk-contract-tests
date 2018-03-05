@@ -6,6 +6,7 @@ ____
 
 [NOTE.speaker]
 --
+* A testing tool that helps you write +Contracts+, and guarantees those +Contracts+ are satisfied.
 * break up your integration tests into unit tests
 * the ideas from https://martinfowler.com/articles/consumerDrivenContracts.html[consumer driven contracts^]
 * https://martinfowler.com/bliki/TolerantReader.html[Tolerant Reader^]

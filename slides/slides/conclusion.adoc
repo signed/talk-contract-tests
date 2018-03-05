@@ -1,0 +1,39 @@
+== Contracts should be about catching ...
+* bugs in the consumer
+* misunderstanding from the consumer about end-points or payload
+* breaking changes by the provider on end-points or payload
+
+Pact scenarios should not dig into the business logic of the Provider.
+
+[NOTE.speaker]
+--
+see https://docs.pact.io/best_practices/contract_tests_not_functional_tests.html for details
+--
+
+=== What to gain by using pact (1)
+* No more integration tests !?
+* Generated Test Doubles
+* Knowing your clients
+** what properties are they using
+** who to contact in case of changes
+** you get people talking and clean up wrong assumptions
+
+=== What to gain by using pact (2)
+* Pact-Broker as ...
+** contract repository
+** source of truth for pre deployment checks
+** displaying service dependencies
+
+=== What can be improved
+* Feature parity between implementations (v2, v3, v4)
+* Documentation (pact-foundation consolidation)
+* Pact-Jvm
+** is implemented in Java/Scala/Kotlin/Groovy
+** configuration via system properties
+** documentation spread around in Readme.md files
+
+[NOTE.speaker]
+--
+- Super responsive on all channels
+- Consumer passing arguments for state changes works only on pact-jvm?
+--
