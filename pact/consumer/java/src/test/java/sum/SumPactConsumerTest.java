@@ -51,15 +51,15 @@ public class SumPactConsumerTest {
 
         return builder
             .given("calculator online")
-            .uponReceiving("sum two numbers")
-            .path("/basic/addition")
-            .headers(contentTypeUtf8EncodedJson())
-            .body(requestBody)
-            .method("POST")
+                .uponReceiving("sum two numbers")
+                .method("POST")
+                .path("/basic/addition")
+                .headers(contentTypeUtf8EncodedJson())
+                .body(requestBody)
             .willRespondWith()
-            .headers(contentTypeUtf8EncodedJson())
-            .status(200)
-            .body(responseBody)
+                .headers(contentTypeUtf8EncodedJson())
+                .status(200)
+                .body(responseBody)
             .toPact();
     }
 
@@ -80,12 +80,12 @@ public class SumPactConsumerTest {
 
         return builder.given("calculator offline")
             .uponReceiving("sum two numbers")
-            .path("/basic/addition")
-            .method("POST")
-            .headers(contentTypeUtf8EncodedJson())
-            .body(requestBody)
+                .method("POST")
+                .path("/basic/addition")
+                .headers(contentTypeUtf8EncodedJson())
+                .body(requestBody)
             .willRespondWith()
-            .status(503)
+                .status(503)
             .toPact();
     }
 

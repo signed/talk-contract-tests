@@ -14,32 +14,32 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class OperationsPactConsumerTest {
 
-	@Rule
-	public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", this);
+    @Rule
+    public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", this);
 
-	@Before
-	public void setUp() {
-		Configuration.setOutputLocationInSystemProperties();
-	}
+    @Before
+    public void setUp() {
+        Configuration.setOutputLocationInSystemProperties();
+    }
 
-	@Pact(consumer = "OperationsService")
-	public RequestResponsePact createPact(PactDslWithProvider builder) {
-		return builder
-				.given("calculator online")
-				.uponReceiving("power down calculator")
-				.path("/calculator/power")
-				.method("DELETE")
-				.willRespondWith()
-				.status(200)
-				.body("{\"status\": \"off\"}")
-				.toPact();
-	}
+    @Test
+    @PactVerification
+    public void runTest() {
+        OperationsClient operationsClient = new OperationsClient(mockProvider.getUrl());
+        OperationsClient.CalculatorStatus status = operationsClient.powerDown();
+        assertThat(status.status).isEqualTo("off");
+    }
 
-	@Test
-	@PactVerification
-	public void runTest() {
-		OperationsClient operationsClient = new OperationsClient(mockProvider.getUrl());
-		OperationsClient.CalculatorStatus status = operationsClient.powerDown();
-		assertThat(status.status).isEqualTo("off");
-	}
+    @Pact(consumer = "OperationsService")
+    public RequestResponsePact createPact(PactDslWithProvider builder) {
+        return builder
+            .given("calculator online")
+                .uponReceiving("power down calculator")
+                .method("DELETE")
+                .path("/calculator/power")
+                .willRespondWith()
+            .status(200)
+                .body("{\"status\": \"off\"}")
+            .toPact();
+    }
 }
