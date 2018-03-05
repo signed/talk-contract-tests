@@ -20,17 +20,17 @@ public class AdditionHandler implements Route {
 	}
 
 	@Override
-	public Object handle(Request req, Response response) {
+	public Object handle(Request request, Response response) {
 		if (onlineStatus.isOffline()) {
 			response.status(503);
 			return "";
 		}
 
-        return __(response, sumFor(parsedInput(req)));
+        return __(response, sumFor(parsedInputFrom(request)));
 	}
 
-    private AdditionInput parsedInput(Request req) {
-        return gson.fromJson(req.body(), AdditionInput.class);
+    private AdditionInput parsedInputFrom(Request request) {
+        return gson.fromJson(request.body(), AdditionInput.class);
     }
 
     private CalculationResult __(Response res, BigDecimal sum) {
