@@ -26,18 +26,14 @@ public class AdditionHandler implements Route {
 			return "";
 		}
 
-        return __(response, sumFor(parsedInputFrom(request)));
-	}
+        response.type("application/json;charset=utf-8");
+        CalculationResult result = new CalculationResult();
+        result.result = sumFor(parsedInputFrom(request));
+        return result;
+    }
 
     private AdditionInput parsedInputFrom(Request request) {
         return gson.fromJson(request.body(), AdditionInput.class);
-    }
-
-    private CalculationResult __(Response res, BigDecimal sum) {
-        res.type("application/json;charset=utf-8");
-        CalculationResult result = new CalculationResult();
-        result.result = sum;
-        return result;
     }
 
     private BigDecimal sumFor(AdditionInput additionInput) {
