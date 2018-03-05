@@ -5,6 +5,7 @@ import au.com.dius.pact.consumer.PactProviderRuleMk2;
 import au.com.dius.pact.consumer.PactVerification;
 import au.com.dius.pact.consumer.dsl.DslPart;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
+import au.com.dius.pact.model.PactSpecVersion;
 import au.com.dius.pact.model.RequestResponsePact;
 import org.junit.Before;
 import org.junit.Rule;
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 public class SumPactConsumerTest {
 
     @Rule
-    public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", this);
+    public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", PactSpecVersion.V3,this);
 
     @Before
     public void setUp() {
