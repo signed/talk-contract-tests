@@ -10,7 +10,7 @@ public class MutablePortHttpTarget extends HttpTarget {
 
 	private Supplier<Integer> portSupplier;
 
-	public MutablePortHttpTarget(Supplier<Integer> portSupplier) {
+	MutablePortHttpTarget(Supplier<Integer> portSupplier) {
 		super(-1);
 		this.portSupplier = portSupplier;
 	}
