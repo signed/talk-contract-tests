@@ -5,10 +5,10 @@ An approach that captures the interactions between two components and serialises
 ____
 
 == Handled Today?
+* Lets do a v2/
+* Not at all _aka_ commit and pray
 * Manual research into client code
 * Hand written Test Doubles
 * Integration tests across services
 * Integration environments
 * End to End tests across the whole system
-* Not at all _aka_ commit and pray
-* Lets do a v2/
