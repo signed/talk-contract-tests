@@ -24,7 +24,7 @@ public class OperationsPactConsumerTest {
     }
 
     @Test
-    @PactVerification
+    @PactVerification(fragment = "powerDownCalculator")
     public void runTest() {
         OperationsClient operationsClient = new OperationsClient(mockProvider.getUrl());
         OperationsClient.CalculatorStatus status = operationsClient.powerDown();
@@ -32,7 +32,7 @@ public class OperationsPactConsumerTest {
     }
 
     @Pact(consumer = "OperationsService")
-    public RequestResponsePact createPact(PactDslWithProvider builder) {
+    public RequestResponsePact powerDownCalculator(PactDslWithProvider builder) {
         return builder
             .given("calculator online")
                 .uponReceiving("power down calculator")
