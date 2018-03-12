@@ -8,7 +8,7 @@
   "interactions": [
     {
       "description": "a request to subtract two numbers",
-      "providerState": "when the calculator is on",
+      "providerState": "calculator online",
       "request": {
         "method": "POST",
         "path": "/basic/subtraction",

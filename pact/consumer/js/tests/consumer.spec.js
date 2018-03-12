@@ -30,8 +30,7 @@ describe('Calculator Pact', () => {
 
   context('when calculator is on', () => {
     before(() => provider.addInteraction({
-        // The 'state' field specifies a "Provider State"
-        state: 'when the calculator is on',
+        state: 'calculator online',
         uponReceiving: 'a request to subtract two numbers',
         withRequest: {
           method: 'POST',
