@@ -1,6 +1,6 @@
 {
   "name": "consumer-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "calculator consumer in js",
   "main": "index.js",
   "scripts": {
@@ -20,12 +20,12 @@
   },
   "homepage": "https://github.com/signed/talk-contract-tests#readme",
   "devDependencies": {
-    "@pact-foundation/pact": "^5.7.0",
-    "chai": "^4.1.2",
-    "chai-as-promised": "^7.1.1",
-    "mocha": "^5.0.1"
+    "@pact-foundation/pact": "5.7.0",
+    "chai": "4.1.2",
+    "chai-as-promised": "7.1.1",
+    "mocha": "5.0.4"
   },
   "dependencies": {
-    "isomorphic-unfetch": "^2.0.0"
+    "isomorphic-unfetch": "2.0.0"
   }
 }
