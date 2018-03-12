@@ -1,11 +1,12 @@
 const path = require('path');
 const chai = require('chai');
 const {Pact} = require('@pact-foundation/pact');
-const fetch = require('isomorphic-unfetch');
 const chaiAsPromised = require('chai-as-promised');
+const SubtractionClient = require('../src/SubtractionClient');
 
 const expect = chai.expect;
 const MOCK_SERVER_PORT = 2202;
+const host = `http://localhost:${MOCK_SERVER_PORT}`;
 const LOG_DIR = path.resolve(process.cwd(), 'pact/consumer/js/logs', 'pact.log');
 const PACT_DIR = path.resolve(process.cwd(), 'pact/pacts');
 
@@ -47,11 +48,7 @@ describe('Calculator Pact', () => {
     );
 
     it('should subtract two numbers', () => {
-      return fetch(`http://localhost:${MOCK_SERVER_PORT}/basic/subtraction`, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json;charset=utf-8'},
-        body: JSON.stringify({minuend: 43.0, subtrahends: [42.0]})
-      }).then(r => r.json())
+      return new SubtractionClient(host).subtract(43.0, 42.0)
         .then((response) => {
           expect(response.result).to.be.a('number');
           expect(response.result).to.equal(1);
