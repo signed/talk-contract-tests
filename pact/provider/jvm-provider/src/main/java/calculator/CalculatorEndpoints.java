@@ -2,6 +2,7 @@ package calculator;
 
 import calculator.addition.AdditionHandler;
 import calculator.power.DeletePowerHandler;
+import calculator.subtraction.SubtractionHandler;
 import com.google.gson.Gson;
 import spark.Service;
 
@@ -16,6 +17,7 @@ public class CalculatorEndpoints {
 
 	public void register(Service http) {
 		http.post("/basic/addition", "application/json", new AdditionHandler(onlineStatus, gson), new JsonTransformer());
+		http.post("/basic/subtraction", "application/json", new SubtractionHandler(onlineStatus, gson), new JsonTransformer());
 		http.delete("/calculator/power", new DeletePowerHandler(onlineStatus), new JsonTransformer());
 	}
 }
