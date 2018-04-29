@@ -1,4 +1,4 @@
-run `npm install && npm present` to build the slides and start the presentation.
+run `npm install && npm run present` to build the slides and start the presentation.
 
 For hints on how to edit the slides have a look at [asciidoctor-revealjs][adoc-reveal] and [asciidoc-syntax-quick-reference][quick].
 
