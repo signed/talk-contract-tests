@@ -16,12 +16,11 @@ repositories {
 dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.sparkjava:spark-core:2.7.2'
-    compile 'com.google.code.gson:gson:2.8.2'
+    compile 'com.google.code.gson:gson:2.8.3'
     testCompile 'org.assertj:assertj-core:3.9.1'
-    testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.14'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.1'
+    testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.15'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
 }
 
 test{

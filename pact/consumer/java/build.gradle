@@ -1,5 +1,5 @@
 plugins {
-    id "au.com.dius.pact" version "3.5.14"
+    id "au.com.dius.pact" version "3.5.15"
     id "com.github.ben-manes.versions" version "0.17.0"
 }
 
@@ -19,10 +19,10 @@ dependencies {
     compile 'com.squareup.okhttp3:okhttp:3.10.0'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.5'
     testCompile 'org.assertj:assertj-core:3.9.1'
-    testCompile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.14'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.1.1'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.1.1'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.1.1'
+    testCompile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.15'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
+    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.2.0'
 }
 
 ext.pactRootDir = '../../pacts'
