@@ -27,7 +27,7 @@ public class AirLock {
     }
 
     private static void betterHoldYourBreath() {
-        System.out.println("Better hold you breath.");
+        System.out.println("Better hold your breath.");
     }
 
     private final Consumer consumer;
