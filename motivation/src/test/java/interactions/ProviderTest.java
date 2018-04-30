@@ -18,7 +18,7 @@ class ProviderTest {
     }
 
     @Test
-    @Disabled("We still have plenty of money")
+    //@Disabled("We still have plenty of money")
     void noLongerWantToPayTheLicenseSorry() {
         argument = anyNegativeInput();
         RuntimeException exception = assertThrows(RuntimeException.class, this::providerResult);
