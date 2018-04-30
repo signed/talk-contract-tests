@@ -1,6 +1,6 @@
 package interactions;
 
-public class Consumer {
+class Consumer {
 
     private final Provider provider;
 
@@ -8,7 +8,7 @@ public class Consumer {
         this.provider = provider;
     }
 
-    public Result upperCaseResult(int input) {
+    Result upperCaseResult(int input) {
         String providerReturned = provider.interact(input).message;
         String providerResult = providerReturned.toUpperCase();
         return new Result("consumer(" + providerResult + ")");

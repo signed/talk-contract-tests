@@ -32,7 +32,7 @@ public class AirLock {
 
     private final Consumer consumer;
 
-    AirLock(Consumer consumer) {
+    private AirLock(Consumer consumer) {
         this.consumer = consumer;
     }
 
