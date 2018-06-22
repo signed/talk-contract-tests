@@ -1,15 +1,16 @@
 package sum;
 
+import au.com.dius.pact.consumer.MockServer;
 import au.com.dius.pact.consumer.Pact;
-import au.com.dius.pact.consumer.PactProviderRuleMk2;
 import au.com.dius.pact.consumer.PactVerification;
 import au.com.dius.pact.consumer.dsl.DslPart;
 import au.com.dius.pact.consumer.dsl.PactDslWithProvider;
-import au.com.dius.pact.model.PactSpecVersion;
+import au.com.dius.pact.consumer.junit5.PactConsumerTestExt;
+import au.com.dius.pact.consumer.junit5.PactTestFor;
 import au.com.dius.pact.model.RequestResponsePact;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import pact.Configuration;
 
 import java.util.HashMap;
@@ -21,26 +22,25 @@ import static org.apache.http.HttpStatus.SC_SERVICE_UNAVAILABLE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class SumPactConsumerTest {
+@ExtendWith(PactConsumerTestExt.class)
+@PactTestFor(providerName = "CalculatorService", port = "0")
+class SumPactConsumerTest {
 
-    @Rule
-    public final PactProviderRuleMk2 mockProvider = new PactProviderRuleMk2("CalculatorService", PactSpecVersion.V3,this);
-
-    @Before
-    public void setUp() {
+    @BeforeEach
+    void setUp() {
         Configuration.setOutputLocationInSystemProperties();
     }
 
     @Test
-    @PactVerification(fragment = "requestForSumWhileCalculatorOnline")
-    public void validateSumWhileCalculatorOnlineTest() {
-        SumClient providerHandler = new SumClient(mockProvider.getUrl());
+    @PactTestFor(pactMethod = "requestForSumWhileCalculatorOnline")
+    void validateSumWhileCalculatorOnlineTest(MockServer mockServer) {
+        SumClient providerHandler = new SumClient(mockServer.getUrl());
         Double sum = providerHandler.sum(43.5, 42.2);
         assertThat(sum).isEqualTo(85.7);
     }
 
-    @Pact(consumer = "SumService")
-    public RequestResponsePact requestForSumWhileCalculatorOnline(PactDslWithProvider builder) {
+    @Pact(provider = "CalculatorService", consumer = "SumService")
+    RequestResponsePact requestForSumWhileCalculatorOnline(PactDslWithProvider builder) {
         return builder
             .given("calculator online")
                 .uponReceiving("sum two numbers")
@@ -56,13 +56,13 @@ public class SumPactConsumerTest {
     }
 
     @Test
-    @PactVerification(fragment = "requestForSumWhileCalculatorInMaintenance")
-    public void validateSumWhileCalculatorInMaintenanceTest() {
-        assertThrows(CalculatorOffline.class, () -> new SumClient(mockProvider.getUrl()).sum(0.0, 0.0));
+    @PactTestFor(pactMethod = "requestForSumWhileCalculatorInMaintenance")
+    void validateSumWhileCalculatorInMaintenanceTest(MockServer mockServer) {
+        assertThrows(CalculatorOffline.class, () -> new SumClient(mockServer.getUrl()).sum(0.0, 0.0));
     }
 
-    @Pact(consumer = "SumService")
-    public RequestResponsePact requestForSumWhileCalculatorInMaintenance(PactDslWithProvider builder) {
+    @Pact(provider = "CalculatorService", consumer = "SumService")
+    RequestResponsePact requestForSumWhileCalculatorInMaintenance(PactDslWithProvider builder) {
         return builder.given("calculator offline")
             .uponReceiving("sum two numbers")
                 .method("POST")

@@ -20,9 +20,9 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.9.6'
     testCompile 'org.assertj:assertj-core:3.10.0'
     testCompile 'au.com.dius:pact-jvm-consumer-java8_2.12:3.5.15'
+    testCompile 'au.com.dius:pact-jvm-consumer-junit5_2.12:3.5.18'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.2.0'
 }
 
 ext.pactRootDir = '../../pacts'
@@ -33,7 +33,7 @@ test {
 
 test {
     useJUnitPlatform {
-        includeEngines 'junit-jupiter', 'junit-vintage'
+        includeEngines 'junit-jupiter'
     }
 }
 
