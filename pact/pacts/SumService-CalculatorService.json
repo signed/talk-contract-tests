@@ -89,10 +89,10 @@
                             "combine": "AND"
                         }
                     },
-                    "path": {
+                    "header": {
                         
                     },
-                    "header": {
+                    "path": {
                         
                     }
                 }
