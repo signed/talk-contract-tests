@@ -14,7 +14,7 @@ services:
       POSTGRES_DB: postgres
 
   broker_app:
-    image: dius/pact-broker:2.22.0-2   #https://hub.docker.com/r/dius/pact-broker/
+    image: dius/pact-broker:2.23.1-1   #https://hub.docker.com/r/dius/pact-broker/
     ports:
       - "80:80"
     links:
