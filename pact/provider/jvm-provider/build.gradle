@@ -1,5 +1,5 @@
 plugins{
-    id "com.github.ben-manes.versions" version "0.17.0"
+    id "com.github.ben-manes.versions" version "0.20.0"
 }
 
 apply plugin: 'java'
@@ -16,9 +16,9 @@ repositories {
 dependencies {
     compile 'ch.qos.logback:logback-classic:1.2.3'
     compile 'com.sparkjava:spark-core:2.7.2'
-    compile 'com.google.code.gson:gson:2.8.3'
-    testCompile 'org.assertj:assertj-core:3.9.1'
-    testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.15'
+    compile 'com.google.code.gson:gson:2.8.5'
+    testCompile 'org.assertj:assertj-core:3.10.0'
+    testCompile 'au.com.dius:pact-jvm-provider-junit_2.12:3.5.18'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
 }
