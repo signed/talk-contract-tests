@@ -1,1 +1,1 @@
-See [pact-jvm-provider-junit](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-junit) for details and configuration options.
+See [pact-jvm-provider-junit5](https://github.com/DiUS/pact-jvm/tree/master/pact-jvm-provider-junit5) for details and configuration options.

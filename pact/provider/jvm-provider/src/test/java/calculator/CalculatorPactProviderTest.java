@@ -1,64 +1,63 @@
 package calculator;
 
-import au.com.dius.pact.provider.junit.PactRunner;
 import au.com.dius.pact.provider.junit.Provider;
 import au.com.dius.pact.provider.junit.State;
 import au.com.dius.pact.provider.junit.loader.PactFolder;
+import au.com.dius.pact.provider.junit.target.HttpTarget;
+import au.com.dius.pact.provider.junit.target.Target;
 import au.com.dius.pact.provider.junit.target.TestTarget;
+import au.com.dius.pact.provider.junit5.HttpTestTarget;
+import au.com.dius.pact.provider.junit5.PactVerificationContext;
+import au.com.dius.pact.provider.junit5.PactVerificationInvocationContextProvider;
 import calculator.power.InMemoryOnlineStatus;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestTemplate;
+import org.junit.jupiter.api.extension.ExtendWith;
 
-@RunWith(PactRunner.class)
 @Provider("CalculatorService")
 @PactFolder("../../pacts")
 //@PactBroker(host = "pactbroker", port = "80")
-public class CalculatorPactProviderTest {
+class CalculatorPactProviderTest {
 
     private final OnlineStatus onlineStatus = new InMemoryOnlineStatus();
 	private final CalculatorService calculatorService = CalculatorService.onRandomPort(onlineStatus);
 
-	@BeforeClass
-	public static void setUpService() {
-        System.out.println("before class");
-		//Run DB, create schema
-		//Run service
-		//...
+	@BeforeAll
+    static void setUpService() {
 		String providerVersionPropertyName = "pact.provider.version";
 		if (!System.getProperties().stringPropertyNames().contains(providerVersionPropertyName)) {
 			System.getProperties().setProperty(providerVersionPropertyName, "0.0.1");
 		}
 	}
 
-	@Before
-	public void before() {
-		// Rest data
-		// Mock dependent service responses
-		// ...
-		System.out.println("before");
-		calculatorService.start();
-	}
+    @BeforeEach
+    void before(PactVerificationContext context) {
+        calculatorService.start();
 
-	@After
-	public void tearDown() {
+        context.setTarget(new HttpTestTarget("localhost", calculatorService.port()));
+    }
+
+	@AfterEach
+    void tearDown() {
 		calculatorService.shutdown();
 	}
 
 	@State("calculator online")
-	public void calculatorOnline() {
-		System.out.println("calculator online");
+	void calculatorOnline() {
 		onlineStatus.powerOn();
 	}
 
 	@State("calculator offline")
-	public void calculatorOffline() {
-		System.out.println("calculator offline");
+	void calculatorOffline() {
 		onlineStatus.powerOff();
 	}
 
-	@TestTarget
-	public final MutablePortHttpTarget target = new MutablePortHttpTarget(calculatorService::port);
+    @TestTemplate
+    @ExtendWith(PactVerificationInvocationContextProvider.class)
+    void pactVerificationTestTemplate(PactVerificationContext context) {
+        context.verifyInteraction();
+    }
 
 }
