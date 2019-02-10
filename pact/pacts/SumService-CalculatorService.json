@@ -38,12 +38,6 @@
                             ],
                             "combine": "AND"
                         }
-                    },
-                    "path": {
-                        
-                    },
-                    "header": {
-                        
                     }
                 }
             },
@@ -88,12 +82,6 @@
                             ],
                             "combine": "AND"
                         }
-                    },
-                    "header": {
-                        
-                    },
-                    "path": {
-                        
                     }
                 }
             },
@@ -126,11 +114,11 @@
         }
     ],
     "metadata": {
-        "pact-specification": {
+        "pactSpecification": {
             "version": "3.0.0"
         },
         "pact-jvm": {
-            "version": "3.5.18"
+            "version": "3.6.1"
         }
     }
 }
