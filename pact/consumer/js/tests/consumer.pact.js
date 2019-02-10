@@ -7,8 +7,8 @@ const SubtractionClient = require('../src/SubtractionClient');
 const expect = chai.expect;
 const MOCK_SERVER_PORT = 2202;
 const host = `http://localhost:${MOCK_SERVER_PORT}`;
-const LOG_DIR = path.resolve(process.cwd(), 'pact/consumer/js/logs', 'pact.log');
-const PACT_DIR = path.resolve(process.cwd(), 'pact/pacts');
+const LOG_DIR = path.resolve(process.cwd(), 'out/logs', 'pact.log');
+const PACT_DIR = path.resolve(process.cwd(), '../../pacts/');
 
 chai.use(chaiAsPromised);
 
@@ -20,7 +20,7 @@ describe('Calculator Pact', () => {
     port: MOCK_SERVER_PORT,
     log: LOG_DIR,
     dir: PACT_DIR,
-    logLevel: 'FATAL',
+    logLevel: 'fatal',
     spec: 2
   });
 

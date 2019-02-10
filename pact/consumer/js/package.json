@@ -4,7 +4,9 @@
   "description": "calculator consumer in js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --exit tests/**/*.spec.js"
+    "test": "mocha --timeout 5000 --exit tests/**/*.spec.js",
+    "pact:consumer": "mocha tests/**/*.pact.js",
+    "pact:publish": "node tests/publish.js"
   },
   "repository": {
     "type": "git",
@@ -13,19 +15,18 @@
   "keywords": [
     "pact"
   ],
-  "author": "Christoph Haefner",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/signed/talk-contract-tests/issues"
   },
   "homepage": "https://github.com/signed/talk-contract-tests#readme",
   "devDependencies": {
-    "@pact-foundation/pact": "5.9.0",
-    "chai": "4.1.2",
+    "@pact-foundation/pact": "7.3.0",
+    "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
-    "mocha": "5.0.5"
+    "mocha": "5.2.0"
   },
   "dependencies": {
-    "isomorphic-unfetch": "2.0.0"
+    "isomorphic-unfetch": "3.0.0"
   }
 }
