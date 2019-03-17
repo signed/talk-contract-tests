@@ -21,10 +21,10 @@
   },
   "homepage": "https://github.com/signed/talk-contract-tests#readme",
   "devDependencies": {
-    "@pact-foundation/pact": "7.3.0",
+    "@pact-foundation/pact": "8.0.5",
     "chai": "4.2.0",
     "chai-as-promised": "7.1.1",
-    "mocha": "5.2.0"
+    "mocha": "6.0.2"
   },
   "dependencies": {
     "isomorphic-unfetch": "3.0.0"
