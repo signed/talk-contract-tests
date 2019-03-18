@@ -16,5 +16,8 @@
   },
   "dependencies": {
     "isomorphic-unfetch": "3.0.0"
+  },
+  "config": {
+    "pact_do_not_track": true
   }
 }
