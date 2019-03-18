@@ -11,7 +11,7 @@ describe('Calculator Pact', () => {
   const provider = new Pact({
     port: port,
     log: path.resolve(process.cwd(), "build/logs", "mockserver-integration.log"),
-    dir: path.resolve(process.cwd(), "../../pacts_out"),
+    dir: path.resolve(process.cwd(), "../../pacts"),
     spec: 2,
     pactfileWriteMode: "update",
     consumer: "SubtractionService",
