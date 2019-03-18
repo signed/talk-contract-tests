@@ -1,0 +1,58 @@
+const SubtractionClient = require('../src/SubtractionClient');
+
+const path = require("path");
+const {Pact} = require('@pact-foundation/pact');
+
+const port = 2202;
+const host = `http://localhost:${port}`;
+
+describe('Calculator Pact', () => {
+
+  const provider = new Pact({
+    port: port,
+    log: path.resolve(process.cwd(), "build/logs", "mockserver-integration.log"),
+    dir: path.resolve(process.cwd(), "../../pacts_out"),
+    spec: 2,
+    pactfileWriteMode: "update",
+    consumer: "SubtractionService",
+    provider: "CalculatorService",
+  });
+
+  beforeAll(done => {
+    provider.setup().then(() => done())
+  });
+
+  afterAll(done => {
+    provider.finalize().then(() => done())
+  });
+
+  afterEach(() => provider.verify());
+
+  describe('when calculator is on', () => {
+    beforeEach(() => {
+      return provider.addInteraction({
+        state: 'calculator online',
+        uponReceiving: 'a request to subtract two numbers',
+        withRequest: {
+          method: 'POST',
+          path: '/basic/subtraction',
+          body: {minuend: 43.0, subtrahends: [42.0]},
+          headers: {'Content-Type': 'application/json;charset=utf-8'}
+        },
+        willRespondWith: {
+          status: 200,
+          headers: {'Content-Type': 'application/json;charset=utf-8'},
+          body: {"result": 1}
+        }
+      })
+    });
+
+    it('should subtract two numbers', () => {
+      return new SubtractionClient(host).subtract(43.0, 42.0)
+        .then((response) => {
+          expect(typeof response.result).toBe('number');
+          expect(response.result).toEqual(1);
+        })
+    });
+  });
+});

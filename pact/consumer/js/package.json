@@ -4,27 +4,16 @@
   "description": "calculator consumer in js",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --exit tests/**/*.spec.js",
+    "test": "jest",
+    "test:consumer": "jest --runInBand --config=pacts/jest.config.js",
     "pact:consumer": "mocha tests/**/*.pact.js",
     "pact:publish": "node tests/publish.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/signed/talk-contract-tests.git"
-  },
-  "keywords": [
-    "pact"
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/signed/talk-contract-tests/issues"
-  },
-  "homepage": "https://github.com/signed/talk-contract-tests#readme",
+  "private": true,
   "devDependencies": {
     "@pact-foundation/pact": "8.0.5",
-    "chai": "4.2.0",
-    "chai-as-promised": "7.1.1",
-    "mocha": "6.0.2"
+    "@types/jest": "24.0.11",
+    "jest": "24.5.0"
   },
   "dependencies": {
     "isomorphic-unfetch": "3.0.0"
