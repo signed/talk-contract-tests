@@ -8,7 +8,7 @@ class SubtractionResult {
 
 }
 
-class Pact {
+class SubtractionClient {
   constructor(host) {
     this.host = host;
   }
@@ -23,4 +23,4 @@ class Pact {
   }
 }
 
-module.exports = Pact;
+module.exports = SubtractionClient;
