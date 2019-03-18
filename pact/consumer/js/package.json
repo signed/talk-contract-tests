@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "test:consumer": "jest --runInBand --config=pacts/jest.config.js",
-    "pact:consumer": "mocha tests/**/*.pact.js",
     "pact:publish": "node tests/publish.js"
   },
   "private": true,
