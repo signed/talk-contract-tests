@@ -10,6 +10,7 @@ describe('Calculator Pact', () => {
 
   const provider = new Pact({
     port: port,
+    logLevel: "error",
     log: path.resolve(process.cwd(), "build/logs", "mockserver-integration.log"),
     dir: path.resolve(process.cwd(), "../../pacts"),
     spec: 2,
