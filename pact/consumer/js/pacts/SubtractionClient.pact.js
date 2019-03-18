@@ -18,13 +18,9 @@ describe('Calculator Pact', () => {
     provider: "CalculatorService",
   });
 
-  beforeAll(done => {
-    provider.setup().then(() => done())
-  });
+  beforeAll(() => provider.setup());
 
-  afterAll(done => {
-    provider.finalize().then(() => done())
-  });
+  afterAll(() => provider.finalize());
 
   afterEach(() => provider.verify());
 
