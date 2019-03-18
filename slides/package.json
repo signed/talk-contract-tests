@@ -1,18 +1,13 @@
 {
   "name": "contract-tests",
   "version": "1.0.0",
-  "description": "",
+  "description": "slides for the contract tests talk",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/signed/talk-contract-tests.git"
-  },
   "scripts": {
     "present": "npm run scribe && opener ./out/presentation.html",
     "scribe": "node scripts/scribe.js"
   },
-  "author": "",
-  "license": "ISC",
+  "private": true,
   "dependencies": {
     "asciidoctor.js": "1.5.6-rc.1",
     "asciidoctor-reveal.js": "1.1.3",
