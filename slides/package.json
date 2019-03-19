@@ -4,7 +4,7 @@
   "description": "slides for the contract tests talk",
   "main": "index.js",
   "scripts": {
-    "present": "npm run scribe && opener ./out/presentation.html",
+    "present": "yarn scribe && opener ./out/presentation.html",
     "scribe": "node scripts/scribe.js"
   },
   "private": true,
