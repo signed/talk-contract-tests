@@ -1,5 +1,5 @@
 const asciidoctor = require('asciidoctor.js')();
-require('asciidoctor-reveal.js');
+const asciidoctorRevealjs = require('asciidoctor-reveal.js');
 const fs = require('fs-extra');
 const {resolve} = require('path');
 
@@ -63,4 +63,5 @@ const options = {
 };
 
 fs.removeSync(out_dir);
+asciidoctorRevealjs.register();
 asciidoctor.convertFile('slides/presentation.adoc', options);
