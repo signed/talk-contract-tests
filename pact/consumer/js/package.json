@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:consumer": "jest --runInBand --config=pacts/jest.config.js",
-    "pact:publish": "node tests/publish.js"
+    "pact:publish": "node pact/publish.js"
   },
   "private": true,
   "devDependencies": {
