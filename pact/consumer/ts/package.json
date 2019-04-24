@@ -1,0 +1,42 @@
+{
+  "name": "ts-starter",
+  "version": "1.0.0",
+  "description": "Basic typescript setup for tdd",
+  "main": "src/index.ts",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:consumer": "jest --runInBand --config=pacts/jest.config.js"
+  },
+  "devDependencies": {
+    "@pact-foundation/pact": "8.2.0",
+    "@types/jest": "24.0.11",
+    "jest": "24.7.1",
+    "ts-jest": "24.0.2",
+    "typescript": "3.4.4"
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "diagnostics": {
+          "warnOnly": true,
+          "ignoreCodes": [
+            "TS151001"
+          ]
+        }
+      }
+    },
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "roots": [
+      "<rootDir>/tests"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/tests/setup.ts"
+    ],
+    "collectCoverage": true
+  },
+  "dependencies": {
+    "isomorphic-unfetch": "3.0.0"
+  }
+}
