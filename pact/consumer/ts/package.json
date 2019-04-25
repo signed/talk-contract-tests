@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "test:consumer": "jest --runInBand --config=pacts/jest.config.js",
+    "test:consumer": "jest --runInBand --roots='<rootDir>/pacts' --testMatch='**/pacts/**/*.pact.ts'",
     "pact:publish": "node pact/publish.js"
   },
   "devDependencies": {
