@@ -20,9 +20,6 @@ include::{slides}/next_steps.adoc[]
 That's it! +
 Any Questions?
 
-== Beyond Consumer Driven Contracts
-Session offer from Nicole for April
-
 [%notitle]
 == Melting Pot
 image::{imagedir}/bumper.jpg[canvas,size=contain]
