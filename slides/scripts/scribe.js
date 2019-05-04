@@ -48,7 +48,7 @@ const asciidoctor_reveal_js = {
   'revealjs_transition': Transition.DEFAULT,
   'revealjs_transitionSpeed': TransitionSpeed.DEFAULT,
   'source-highlighter': 'highlightjs',
-  'imagedir': '../images/'
+  'imagedir': '../images'
 };
 
 // These are the same as for the ruby version
