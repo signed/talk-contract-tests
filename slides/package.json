@@ -4,8 +4,8 @@
   "description": "slides for the contract tests talk",
   "main": "index.js",
   "scripts": {
-    "present:watch": "yarn present && chokidar \"slides/*.adoc\" -c \"yarn scribe\"",
-    "present": "yarn scribe && opener ./out/presentation.html",
+    "present": "yarn scribe && browser-sync start --server --no-online --no-ui --startPath out/presentation.html --watch --files out/presentation.html --watchEvents add",
+    "scribe:watch": "chokidar \"slides/*.adoc\" --command \"yarn scribe\"",
     "scribe": "node scripts/scribe.js"
   },
   "private": true,
@@ -15,6 +15,7 @@
     "fs-extra": "7.0.1"
   },
   "devDependencies": {
+    "browser-sync": "2.26.5",
     "chokidar-cli": "1.2.2",
     "opener": "1.5.1"
   }

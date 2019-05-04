@@ -3,7 +3,7 @@ const asciidoctorRevealjs = require('asciidoctor-reveal.js');
 const fs = require('fs-extra');
 
 const base_dir = process.cwd();
-const out_dir = base_dir + '/out';
+const out_dir = './out';
 
 // Sets additional document attributes, which override equivalently-named
 // attributes defined in the document unless the value ends with @
@@ -41,7 +41,7 @@ const Theme = Object.freeze({
 
 // https://asciidoctor.org/docs/asciidoctor-revealjs/#reveal-js-options
 const asciidoctor_reveal_js = {
-  'revealjsdir': base_dir + '/node_modules/reveal.js@',
+  'revealjsdir': '/node_modules/reveal.js@',
   'revealjs_history': true,
   'revealjs_theme': Theme.MOON,
   'revealjs_transition': Transition.DEFAULT,
