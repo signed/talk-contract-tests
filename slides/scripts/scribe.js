@@ -1,9 +1,8 @@
 const asciidoctor = require('asciidoctor.js')();
 const asciidoctorRevealjs = require('asciidoctor-reveal.js');
 const fs = require('fs-extra');
-const {resolve} = require('path');
 
-const base_dir = resolve(__dirname + "/..");
+const base_dir = process.cwd();
 const out_dir = base_dir + '/out';
 
 // Sets additional document attributes, which override equivalently-named
