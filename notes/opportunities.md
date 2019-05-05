@@ -13,8 +13,4 @@
 1. Pact Broker details
    1. https://github.com/pact-foundation/pact_broker/wiki
 1. How to switch out the code highlighter theme
-1. How to do hot reloading of the slides
-1. Send pull requests for broken links
-   - write a web crawler that follows all the links
-   - write a markdown parser and run through the source
 1. List of resources look through it https://dius.com.au/resources/game-day/reference-links/
