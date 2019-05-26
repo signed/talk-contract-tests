@@ -1,0 +1,21 @@
+{
+  "provider": {
+    "name": "CalculatorService"
+  },
+  "events": [
+    {
+      "name": "contract_content_changed"
+    }
+  ],
+  "request": {
+    "method": "POST",
+    "url": "http://jenkins:8080/job/pact-verify/buildWithParameters",
+    "username": "admin",
+    "password": "115a3a8e229b66c8b900c6147d91102dbb",
+    "headers": {
+      "Accept": "application/json",
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
+    "body": "PERSON=pact-broker"
+  }
+}

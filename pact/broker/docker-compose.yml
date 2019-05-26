@@ -2,6 +2,13 @@ version: '3'
 
 services:
 
+  jenkins:
+    image: jenkins/jenkins:2.178-slim
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./jenkins/var:/var/jenkins_home
+
   postgres:
     image: postgres:11.3-alpine
     healthcheck:
@@ -13,12 +20,10 @@ services:
       POSTGRES_PASSWORD: password
       POSTGRES_DB: postgres
 
-  broker_app:
+  pact_broker:
     image: pactfoundation/pact-broker:edge   #https://hub.docker.com/r/dius/pact-broker/
     ports:
       - "80:9292"
-    links:
-      - postgres
     depends_on:
       - postgres
     environment:
@@ -27,3 +32,5 @@ services:
       PACT_BROKER_DATABASE_HOST: postgres
       PACT_BROKER_DATABASE_NAME: postgres
       PASSENGER_DISABLE_SECURITY_UPDATE_CHECK: "true"
+      PACT_BROKER_WEBHOOK_SCHEME_WHITELIST: "http https"
+      PACT_BROKER_WEBHOOK_HOST_WHITELIST: "jenkins"
