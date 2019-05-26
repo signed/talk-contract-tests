@@ -1,17 +1,18 @@
 #!groovy
 pipeline {
-    agent none
+  agent none
 
-    parameters {
-        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
-    }
+  parameters {
+    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+    choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+  }
 
-    stages {
-        stage('Create Jira Ticket') {
-            agent any
-            steps {
-                echo "Hello ${PERSON}."
-            }
-        }
+  stages {
+    stage('Create Jira Ticket') {
+      agent any
+      steps {
+        echo "Hello ${PERSON}. You chose ${CHOICE}"
+      }
     }
+  }
 }

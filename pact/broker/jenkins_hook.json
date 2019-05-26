@@ -16,6 +16,6 @@
       "Accept": "application/json",
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    "body": "PERSON=pact-broker"
+    "body": "PERSON=pact-broker&CHOICE=Three"
   }
 }
