@@ -1,124 +1,124 @@
 {
-    "provider": {
-        "name": "CalculatorService"
-    },
-    "consumer": {
-        "name": "SumService"
-    },
-    "interactions": [
-        {
-            "description": "sum two numbers",
-            "request": {
-                "method": "POST",
-                "path": "/basic/addition",
-                "headers": {
-                    "Content-Type": "application/json;charset=utf-8"
-                },
-                "body": {
-                    "summands": [
-                        0,
-                        0
-                    ]
-                },
-                "matchingRules": {
-                    "body": {
-                        "$.summands[0]": {
-                            "matchers": [
-                                {
-                                    "match": "decimal"
-                                }
-                            ],
-                            "combine": "AND"
-                        },
-                        "$.summands[1]": {
-                            "matchers": [
-                                {
-                                    "match": "decimal"
-                                }
-                            ],
-                            "combine": "AND"
-                        }
-                    }
-                }
-            },
-            "response": {
-                "status": 503
-            },
-            "providerStates": [
-                {
-                    "name": "calculator offline"
-                }
-            ]
+  "provider": {
+    "name": "CalculatorService"
+  },
+  "consumer": {
+    "name": "SumService"
+  },
+  "interactions": [
+    {
+      "description": "sum two numbers",
+      "request": {
+        "method": "POST",
+        "path": "/basic/addition",
+        "headers": {
+          "Content-Type": "application/json;charset\u003dutf-8"
         },
-        {
-            "description": "sum two numbers",
-            "request": {
-                "method": "POST",
-                "path": "/basic/addition",
-                "headers": {
-                    "Content-Type": "application/json;charset=utf-8"
-                },
-                "body": {
-                    "summands": [
-                        43.5,
-                        42.2
-                    ]
-                },
-                "matchingRules": {
-                    "body": {
-                        "$.summands[0]": {
-                            "matchers": [
-                                {
-                                    "match": "decimal"
-                                }
-                            ],
-                            "combine": "AND"
-                        },
-                        "$.summands[1]": {
-                            "matchers": [
-                                {
-                                    "match": "decimal"
-                                }
-                            ],
-                            "combine": "AND"
-                        }
-                    }
-                }
-            },
-            "response": {
-                "status": 200,
-                "headers": {
-                    "Content-Type": "application/json;charset=utf-8"
-                },
-                "body": {
-                    "result": 85.7
-                },
-                "matchingRules": {
-                    "body": {
-                        "$.result": {
-                            "matchers": [
-                                {
-                                    "match": "decimal"
-                                }
-                            ],
-                            "combine": "AND"
-                        }
-                    }
-                }
-            },
-            "providerStates": [
-                {
-                    "name": "calculator online"
-                }
-            ]
-        }
-    ],
-    "metadata": {
-        "pactSpecification": {
-            "version": "3.0.0"
+        "body": {
+          "summands": [
+            0,
+            0
+          ]
         },
-        "pact-jvm": {
-            "version": "3.6.1"
+        "matchingRules": {
+          "body": {
+            "$.summands[0]": {
+              "matchers": [
+                {
+                  "match": "decimal"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.summands[1]": {
+              "matchers": [
+                {
+                  "match": "decimal"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
         }
+      },
+      "response": {
+        "status": 503
+      },
+      "providerStates": [
+        {
+          "name": "calculator offline"
+        }
+      ]
+    },
+    {
+      "description": "sum two numbers",
+      "request": {
+        "method": "POST",
+        "path": "/basic/addition",
+        "headers": {
+          "Content-Type": "application/json;charset\u003dutf-8"
+        },
+        "body": {
+          "summands": [
+            43.5,
+            42.2
+          ]
+        },
+        "matchingRules": {
+          "body": {
+            "$.summands[0]": {
+              "matchers": [
+                {
+                  "match": "decimal"
+                }
+              ],
+              "combine": "AND"
+            },
+            "$.summands[1]": {
+              "matchers": [
+                {
+                  "match": "decimal"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/json;charset\u003dutf-8"
+        },
+        "body": {
+          "result": 85.7
+        },
+        "matchingRules": {
+          "body": {
+            "$.result": {
+              "matchers": [
+                {
+                  "match": "decimal"
+                }
+              ],
+              "combine": "AND"
+            }
+          }
+        }
+      },
+      "providerStates": [
+        {
+          "name": "calculator online"
+        }
+      ]
     }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "3.0.0"
+    },
+    "pact-jvm": {
+      "version": "3.6.7"
+    }
+  }
 }
