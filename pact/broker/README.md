@@ -7,12 +7,16 @@ echo "127.0.0.1       pactbroker" >> /private/etc/hosts
 ```
 
 # start each container in isolation
-```bash
+```shell script
 docker-compose up postgres
 docker-compose up pact_broker
-docker-compose up jenkins
 ```
 The pact broker ui should be available at [http://127.0.0.1](http://127.0.0.1).
+
+# WIP integrating into jenkins
+```shell script
+docker-compose up jenkins
+```
 Jenkins should be available at [http://localhost:8080](http://localhost:8080) 
 
 # What do I have to do to clean existing data
