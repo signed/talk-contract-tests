@@ -12,7 +12,7 @@
         "method": "POST",
         "path": "/basic/addition",
         "headers": {
-          "Content-Type": "application/json;charset\u003dutf-8"
+          "Content-Type": "application/json;charset=utf-8"
         },
         "body": {
           "summands": [
@@ -56,7 +56,7 @@
         "method": "POST",
         "path": "/basic/addition",
         "headers": {
-          "Content-Type": "application/json;charset\u003dutf-8"
+          "Content-Type": "application/json;charset=utf-8"
         },
         "body": {
           "summands": [
@@ -88,7 +88,7 @@
       "response": {
         "status": 200,
         "headers": {
-          "Content-Type": "application/json;charset\u003dutf-8"
+          "Content-Type": "application/json;charset=utf-8"
         },
         "body": {
           "result": 85.7
@@ -118,7 +118,7 @@
       "version": "3.0.0"
     },
     "pact-jvm": {
-      "version": "3.6.7"
+      "version": "4.0.10"
     }
   }
 }
