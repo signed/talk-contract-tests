@@ -10,9 +10,10 @@ echo "127.0.0.1       pactbroker" >> /private/etc/hosts
 ```bash
 docker-compose up postgres
 docker-compose up pact_broker
-docker-compose down #destroys all containers
+docker-compose up jenkins
 ```
-The pact broker ui should be available at [http://127.0.0.1](http://127.0.0.1)
+The pact broker ui should be available at [http://127.0.0.1](http://127.0.0.1).
+Jenkins should be available at [http://localhost:8080](http://localhost:8080) 
 
 # What do I have to do to clean existing data
 1. Stop the containers
