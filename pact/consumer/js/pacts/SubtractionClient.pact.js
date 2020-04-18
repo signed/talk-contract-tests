@@ -15,7 +15,7 @@ describe('Calculator Pact', () => {
     dir: path.resolve(process.cwd(), "../../pacts"),
     spec: 2,
     pactfileWriteMode: "update",
-    consumer: "SubtractionService",
+    consumer: "JS-Subtraction",
     provider: "CalculatorService",
   });
 

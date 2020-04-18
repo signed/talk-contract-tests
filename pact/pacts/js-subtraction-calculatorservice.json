@@ -1,6 +1,6 @@
 {
   "consumer": {
-    "name": "SubtractionService"
+    "name": "JS-Subtraction"
   },
   "provider": {
     "name": "CalculatorService"
