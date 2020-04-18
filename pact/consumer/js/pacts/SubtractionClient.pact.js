@@ -1,7 +1,6 @@
-const SubtractionClient = require('../src/SubtractionClient');
-
-const path = require("path");
 const {Pact} = require('@pact-foundation/pact');
+const SubtractionClient = require('../src/SubtractionClient');
+const path = require("path");
 
 const port = 2202;
 const host = `http://localhost:${port}`;

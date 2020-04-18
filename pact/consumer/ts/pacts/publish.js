@@ -4,7 +4,7 @@ const opts = {
   pactFilesOrDirs: [
     path.resolve(
       __dirname,
-      "../../../pacts/"
+      "../../../pacts/ts-subtraction-calculatorservice.json"
     ),
   ],
   pactBroker: "http://pactbroker",
