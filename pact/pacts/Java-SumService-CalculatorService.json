@@ -3,7 +3,7 @@
     "name": "CalculatorService"
   },
   "consumer": {
-    "name": "SumService"
+    "name": "Java-SumService"
   },
   "interactions": [
     {

@@ -3,7 +3,7 @@
     "name": "CalculatorService"
   },
   "consumer": {
-    "name": "OperationsService"
+    "name": "Java-OperationsService"
   },
   "interactions": [
     {

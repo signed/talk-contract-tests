@@ -29,7 +29,7 @@ class OperationsPactConsumerTest {
         assertThat(status.status).isEqualTo("off");
     }
 
-    @Pact(provider = "CalculatorService", consumer = "OperationsService")
+    @Pact(provider = "CalculatorService", consumer = "Java-OperationsService")
     RequestResponsePact powerDownCalculator(PactDslWithProvider builder) {
         return builder
             .given("calculator online")

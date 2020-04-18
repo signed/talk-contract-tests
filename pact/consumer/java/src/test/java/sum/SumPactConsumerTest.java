@@ -38,7 +38,7 @@ class SumPactConsumerTest {
         assertThat(sum).isEqualTo(85.7);
     }
 
-    @Pact(provider = "CalculatorService", consumer = "SumService")
+    @Pact(provider = "CalculatorService", consumer = "Java-SumService")
     RequestResponsePact requestForSumWhileCalculatorOnline(PactDslWithProvider builder) {
         return builder
             .given("calculator online")
@@ -60,7 +60,7 @@ class SumPactConsumerTest {
         assertThrows(CalculatorOffline.class, () -> new SumClient(mockServer.getUrl()).sum(0.0, 0.0));
     }
 
-    @Pact(provider = "CalculatorService", consumer = "SumService")
+    @Pact(provider = "CalculatorService", consumer = "Java-SumService")
     RequestResponsePact requestForSumWhileCalculatorInMaintenance(PactDslWithProvider builder) {
         return builder.given("calculator offline")
             .uponReceiving("sum two numbers")
