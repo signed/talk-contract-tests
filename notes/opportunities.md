@@ -1,7 +1,7 @@
 1. Draw some diagrams like in https://docs.pact.io/
 
 ---
-
+1. Add [pactflow](https://pactflow.io/oss/) to the talk 
 1. Have a look at https://github.com/pact-foundation/pact-specification
 1. browse to the pact-ruby wiki https://github.com/pact-foundation/pact-ruby/wiki
 1. Do the pact workshop https://docs.pact.io/documentation/implementation_guides.html

@@ -5,7 +5,7 @@ out/
 node_modules
 npm-debug.log
 .gradle/
-out/
 build/
 *.log
 pact/broker/jenkins/var/
+pact/broker/postgres/var/
