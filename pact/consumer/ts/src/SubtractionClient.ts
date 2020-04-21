@@ -1,4 +1,4 @@
-import 'isomorphic-unfetch';
+import fetch from 'node-fetch';
 
 export class SubtractionResult {
     constructor(public result: number) {
