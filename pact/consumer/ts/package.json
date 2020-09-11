@@ -10,7 +10,7 @@
     "pact:publish": "ts-node pacts/publish.ts"
   },
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {
     "@pact-foundation/pact": "9.9.12",
