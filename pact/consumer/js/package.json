@@ -10,13 +10,13 @@
     "pact:publish": "node pacts/publish.js"
   },
   "dependencies": {
-    "isomorphic-unfetch": "3.0.0"
+    "isomorphic-unfetch": "3.1.0"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "9.9.5",
-    "@types/jest": "25.2.1",
-    "jest": "25.3.0"
-    },
+    "@pact-foundation/pact": "9.12.1",
+    "@types/jest": "26.0.14",
+    "jest": "26.4.2"
+  },
   "config": {
     "pact_do_not_track": true
   }

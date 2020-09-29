@@ -1,4 +1,4 @@
-import { Pact } from '@pact-foundation/pact';
+import  { Pact } from '@pact-foundation/pact';
 import { SubtractionClient } from '../src/SubtractionClient';
 import * as path from 'path';
 

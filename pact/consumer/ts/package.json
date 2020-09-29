@@ -10,15 +10,16 @@
     "pact:publish": "ts-node pacts/publish.ts"
   },
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   },
   "devDependencies": {
-    "@pact-foundation/pact": "9.9.12",
-    "@types/jest": "25.2.1",
-    "jest": "25.4.0",
-    "ts-jest": "25.4.0",
-    "ts-node": "8.9.0",
-    "typescript": "3.8.3"
+    "@pact-foundation/pact": "9.12.1",
+    "@types/jest": "26.0.14",
+    "@types/node-fetch": "2.5.7",
+    "jest": "26.4.2",
+    "ts-jest": "26.4.1",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.3"
   },
   "config": {
     "pact_do_not_track": true
