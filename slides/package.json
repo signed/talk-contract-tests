@@ -8,6 +8,6 @@
   },
   "private": true,
   "devDependencies": {
-    "@signed/scribe": "0.1.0"
+    "@signed/scribe": "0.2.0"
   }
 }
